@@ -1,0 +1,4011 @@
+{
+ "modifiers": [
+  {
+   "id": "GREASE_PENCIL_VERTEX_WEIGHT_PROXIMITY",
+   "label": "Vertex Weight Proximity",
+   "desc": "Generate vertex weights based on distance to object",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_VERTEX_WEIGHT_PROXIMITY')"
+  },
+  {
+   "id": "DATA_TRANSFER",
+   "label": "Data Transfer",
+   "desc": "Transfer several types of data (vertex groups, UV maps, vertex colors, custom normals) from one mesh to another",
+   "add_via": "bpy.ops.object.modifier_add(type='DATA_TRANSFER')"
+  },
+  {
+   "id": "MESH_CACHE",
+   "label": "Mesh Cache",
+   "desc": "Deform the mesh using an external frame-by-frame vertex transform cache",
+   "add_via": "bpy.ops.object.modifier_add(type='MESH_CACHE')"
+  },
+  {
+   "id": "MESH_SEQUENCE_CACHE",
+   "label": "Mesh Sequence Cache",
+   "desc": "Deform the mesh or curve using an external mesh cache in Alembic format",
+   "add_via": "bpy.ops.object.modifier_add(type='MESH_SEQUENCE_CACHE')"
+  },
+  {
+   "id": "NORMAL_EDIT",
+   "label": "Normal Edit",
+   "desc": "Modify the direction of the surface normals",
+   "add_via": "bpy.ops.object.modifier_add(type='NORMAL_EDIT')"
+  },
+  {
+   "id": "WEIGHTED_NORMAL",
+   "label": "Weighted Normal",
+   "desc": "Modify the direction of the surface normals using a weighting method",
+   "add_via": "bpy.ops.object.modifier_add(type='WEIGHTED_NORMAL')"
+  },
+  {
+   "id": "UV_PROJECT",
+   "label": "UV Project",
+   "desc": "Project the UV map coordinates from the negative Z axis of another object",
+   "add_via": "bpy.ops.object.modifier_add(type='UV_PROJECT')"
+  },
+  {
+   "id": "UV_WARP",
+   "label": "UV Warp",
+   "desc": "Transform the UV map using the difference between two objects",
+   "add_via": "bpy.ops.object.modifier_add(type='UV_WARP')"
+  },
+  {
+   "id": "VERTEX_WEIGHT_EDIT",
+   "label": "Vertex Weight Edit",
+   "desc": "Modify of the weights of a vertex group",
+   "add_via": "bpy.ops.object.modifier_add(type='VERTEX_WEIGHT_EDIT')"
+  },
+  {
+   "id": "VERTEX_WEIGHT_MIX",
+   "label": "Vertex Weight Mix",
+   "desc": "Mix the weights of two vertex groups",
+   "add_via": "bpy.ops.object.modifier_add(type='VERTEX_WEIGHT_MIX')"
+  },
+  {
+   "id": "VERTEX_WEIGHT_PROXIMITY",
+   "label": "Vertex Weight Proximity",
+   "desc": "Set the vertex group weights based on the distance to another target object",
+   "add_via": "bpy.ops.object.modifier_add(type='VERTEX_WEIGHT_PROXIMITY')"
+  },
+  {
+   "id": "GREASE_PENCIL_COLOR",
+   "label": "Hue/Saturation",
+   "desc": "Change hue/saturation/value of the strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_COLOR')"
+  },
+  {
+   "id": "GREASE_PENCIL_TINT",
+   "label": "Tint",
+   "desc": "Tint the color of the strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_TINT')"
+  },
+  {
+   "id": "GREASE_PENCIL_OPACITY",
+   "label": "Opacity",
+   "desc": "Change the opacity of the strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_OPACITY')"
+  },
+  {
+   "id": "GREASE_PENCIL_VERTEX_WEIGHT_ANGLE",
+   "label": "Vertex Weight Angle",
+   "desc": "Generate vertex weights based on stroke angle",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_VERTEX_WEIGHT_ANGLE')"
+  },
+  {
+   "id": "GREASE_PENCIL_TIME",
+   "label": "Time Offset",
+   "desc": "Offset keyframes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_TIME')"
+  },
+  {
+   "id": "GREASE_PENCIL_TEXTURE",
+   "label": "Texture Mapping",
+   "desc": "Change stroke UV texture values",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_TEXTURE')"
+  },
+  {
+   "id": "ARRAY",
+   "label": "Array",
+   "desc": "Create copies of the shape with offsets",
+   "add_via": "bpy.ops.object.modifier_add(type='ARRAY')"
+  },
+  {
+   "id": "BEVEL",
+   "label": "Bevel",
+   "desc": "Generate sloped corners by adding geometry to the mesh's edges or vertices",
+   "add_via": "bpy.ops.object.modifier_add(type='BEVEL')"
+  },
+  {
+   "id": "BOOLEAN",
+   "label": "Boolean",
+   "desc": "Use another shape to cut, combine or perform a difference operation",
+   "add_via": "bpy.ops.object.modifier_add(type='BOOLEAN')"
+  },
+  {
+   "id": "BUILD",
+   "label": "Build",
+   "desc": "Cause the faces of the mesh object to appear or disappear one after the other over time",
+   "add_via": "bpy.ops.object.modifier_add(type='BUILD')"
+  },
+  {
+   "id": "DECIMATE",
+   "label": "Decimate",
+   "desc": "Reduce the geometry density",
+   "add_via": "bpy.ops.object.modifier_add(type='DECIMATE')"
+  },
+  {
+   "id": "EDGE_SPLIT",
+   "label": "Edge Split",
+   "desc": "Split away joined faces at the edges",
+   "add_via": "bpy.ops.object.modifier_add(type='EDGE_SPLIT')"
+  },
+  {
+   "id": "NODES",
+   "label": "Geometry Nodes",
+   "desc": "",
+   "add_via": "bpy.ops.object.modifier_add(type='NODES')"
+  },
+  {
+   "id": "MASK",
+   "label": "Mask",
+   "desc": "Dynamically hide vertices based on a vertex group or armature",
+   "add_via": "bpy.ops.object.modifier_add(type='MASK')"
+  },
+  {
+   "id": "MIRROR",
+   "label": "Mirror",
+   "desc": "Mirror along the local X, Y and/or Z axes, over the object origin",
+   "add_via": "bpy.ops.object.modifier_add(type='MIRROR')"
+  },
+  {
+   "id": "MESH_TO_VOLUME",
+   "label": "Mesh to Volume",
+   "desc": "",
+   "add_via": "bpy.ops.object.modifier_add(type='MESH_TO_VOLUME')"
+  },
+  {
+   "id": "MULTIRES",
+   "label": "Multiresolution",
+   "desc": "Subdivide the mesh in a way that allows editing the higher subdivision levels",
+   "add_via": "bpy.ops.object.modifier_add(type='MULTIRES')"
+  },
+  {
+   "id": "REMESH",
+   "label": "Remesh",
+   "desc": "Generate new mesh topology based on the current shape",
+   "add_via": "bpy.ops.object.modifier_add(type='REMESH')"
+  },
+  {
+   "id": "SCREW",
+   "label": "Screw",
+   "desc": "Lathe around an axis, treating the input mesh as a profile",
+   "add_via": "bpy.ops.object.modifier_add(type='SCREW')"
+  },
+  {
+   "id": "SKIN",
+   "label": "Skin",
+   "desc": "Create a solid shape from vertices and edges, using the vertex radius to define the thickness",
+   "add_via": "bpy.ops.object.modifier_add(type='SKIN')"
+  },
+  {
+   "id": "SOLIDIFY",
+   "label": "Solidify",
+   "desc": "Make the surface thick",
+   "add_via": "bpy.ops.object.modifier_add(type='SOLIDIFY')"
+  },
+  {
+   "id": "SUBSURF",
+   "label": "Subdivision Surface",
+   "desc": "Split the faces into smaller parts, giving it a smoother appearance",
+   "add_via": "bpy.ops.object.modifier_add(type='SUBSURF')"
+  },
+  {
+   "id": "TRIANGULATE",
+   "label": "Triangulate",
+   "desc": "Convert all polygons to triangles",
+   "add_via": "bpy.ops.object.modifier_add(type='TRIANGULATE')"
+  },
+  {
+   "id": "VOLUME_TO_MESH",
+   "label": "Volume to Mesh",
+   "desc": "",
+   "add_via": "bpy.ops.object.modifier_add(type='VOLUME_TO_MESH')"
+  },
+  {
+   "id": "WELD",
+   "label": "Weld",
+   "desc": "Find groups of vertices closer than dist and merge them together",
+   "add_via": "bpy.ops.object.modifier_add(type='WELD')"
+  },
+  {
+   "id": "WIREFRAME",
+   "label": "Wireframe",
+   "desc": "Convert faces into thickened edges",
+   "add_via": "bpy.ops.object.modifier_add(type='WIREFRAME')"
+  },
+  {
+   "id": "GREASE_PENCIL_ARRAY",
+   "label": "Array",
+   "desc": "Duplicate strokes into an array",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_ARRAY')"
+  },
+  {
+   "id": "GREASE_PENCIL_BUILD",
+   "label": "Build",
+   "desc": "Grease Pencil build modifier",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_BUILD')"
+  },
+  {
+   "id": "GREASE_PENCIL_LENGTH",
+   "label": "Length",
+   "desc": "Grease Pencil length modifier",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_LENGTH')"
+  },
+  {
+   "id": "LINEART",
+   "label": "Line Art",
+   "desc": "Generate Line Art from scene geometries",
+   "add_via": "bpy.ops.object.modifier_add(type='LINEART')"
+  },
+  {
+   "id": "GREASE_PENCIL_MIRROR",
+   "label": "Mirror",
+   "desc": "Duplicate strokes like a mirror",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_MIRROR')"
+  },
+  {
+   "id": "GREASE_PENCIL_MULTIPLY",
+   "label": "Multiple Strokes",
+   "desc": "Generate multiple strokes around original strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_MULTIPLY')"
+  },
+  {
+   "id": "GREASE_PENCIL_SIMPLIFY",
+   "label": "Simplify",
+   "desc": "Simplify stroke reducing number of points",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_SIMPLIFY')"
+  },
+  {
+   "id": "GREASE_PENCIL_SUBDIV",
+   "label": "Subdivide",
+   "desc": "Grease Pencil subdivide modifier",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_SUBDIV')"
+  },
+  {
+   "id": "GREASE_PENCIL_ENVELOPE",
+   "label": "Envelope",
+   "desc": "Create an envelope shape",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_ENVELOPE')"
+  },
+  {
+   "id": "GREASE_PENCIL_OUTLINE",
+   "label": "Outline",
+   "desc": "Convert stroke to outline",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_OUTLINE')"
+  },
+  {
+   "id": "ARMATURE",
+   "label": "Armature",
+   "desc": "Deform the shape using an armature object",
+   "add_via": "bpy.ops.object.modifier_add(type='ARMATURE')"
+  },
+  {
+   "id": "CAST",
+   "label": "Cast",
+   "desc": "Shift the shape towards a predefined primitive",
+   "add_via": "bpy.ops.object.modifier_add(type='CAST')"
+  },
+  {
+   "id": "CURVE",
+   "label": "Curve",
+   "desc": "Bend the mesh using a curve object",
+   "add_via": "bpy.ops.object.modifier_add(type='CURVE')"
+  },
+  {
+   "id": "DISPLACE",
+   "label": "Displace",
+   "desc": "Offset vertices based on a texture",
+   "add_via": "bpy.ops.object.modifier_add(type='DISPLACE')"
+  },
+  {
+   "id": "HOOK",
+   "label": "Hook",
+   "desc": "Deform specific points using another object",
+   "add_via": "bpy.ops.object.modifier_add(type='HOOK')"
+  },
+  {
+   "id": "LAPLACIANDEFORM",
+   "label": "Laplacian Deform",
+   "desc": "Deform based a series of anchor points",
+   "add_via": "bpy.ops.object.modifier_add(type='LAPLACIANDEFORM')"
+  },
+  {
+   "id": "LATTICE",
+   "label": "Lattice",
+   "desc": "Deform using the shape of a lattice object",
+   "add_via": "bpy.ops.object.modifier_add(type='LATTICE')"
+  },
+  {
+   "id": "MESH_DEFORM",
+   "label": "Mesh Deform",
+   "desc": "Deform using a different mesh, which acts as a deformation cage",
+   "add_via": "bpy.ops.object.modifier_add(type='MESH_DEFORM')"
+  },
+  {
+   "id": "SHRINKWRAP",
+   "label": "Shrinkwrap",
+   "desc": "Project the shape onto another object",
+   "add_via": "bpy.ops.object.modifier_add(type='SHRINKWRAP')"
+  },
+  {
+   "id": "SIMPLE_DEFORM",
+   "label": "Simple Deform",
+   "desc": "Deform the shape by twisting, bending, tapering or stretching",
+   "add_via": "bpy.ops.object.modifier_add(type='SIMPLE_DEFORM')"
+  },
+  {
+   "id": "SMOOTH",
+   "label": "Smooth",
+   "desc": "Smooth the mesh by flattening the angles between adjacent faces",
+   "add_via": "bpy.ops.object.modifier_add(type='SMOOTH')"
+  },
+  {
+   "id": "CORRECTIVE_SMOOTH",
+   "label": "Smooth Corrective",
+   "desc": "Smooth the mesh while still preserving the volume",
+   "add_via": "bpy.ops.object.modifier_add(type='CORRECTIVE_SMOOTH')"
+  },
+  {
+   "id": "LAPLACIANSMOOTH",
+   "label": "Smooth Laplacian",
+   "desc": "Reduce the noise on a mesh surface with minimal changes to its shape",
+   "add_via": "bpy.ops.object.modifier_add(type='LAPLACIANSMOOTH')"
+  },
+  {
+   "id": "SURFACE_DEFORM",
+   "label": "Surface Deform",
+   "desc": "Transfer motion from another mesh",
+   "add_via": "bpy.ops.object.modifier_add(type='SURFACE_DEFORM')"
+  },
+  {
+   "id": "WARP",
+   "label": "Warp",
+   "desc": "Warp parts of a mesh to a new location in a very flexible way thanks to 2 specified objects",
+   "add_via": "bpy.ops.object.modifier_add(type='WARP')"
+  },
+  {
+   "id": "WAVE",
+   "label": "Wave",
+   "desc": "Adds a ripple-like motion to an object's geometry",
+   "add_via": "bpy.ops.object.modifier_add(type='WAVE')"
+  },
+  {
+   "id": "VOLUME_DISPLACE",
+   "label": "Volume Displace",
+   "desc": "Deform volume based on noise or other vector fields",
+   "add_via": "bpy.ops.object.modifier_add(type='VOLUME_DISPLACE')"
+  },
+  {
+   "id": "GREASE_PENCIL_HOOK",
+   "label": "Hook",
+   "desc": "Deform stroke points using objects",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_HOOK')"
+  },
+  {
+   "id": "GREASE_PENCIL_NOISE",
+   "label": "Noise",
+   "desc": "Generate noise wobble in Grease Pencil strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_NOISE')"
+  },
+  {
+   "id": "GREASE_PENCIL_OFFSET",
+   "label": "Offset",
+   "desc": "Change stroke location, rotation, or scale",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_OFFSET')"
+  },
+  {
+   "id": "GREASE_PENCIL_SMOOTH",
+   "label": "Smooth",
+   "desc": "Smooth Grease Pencil strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_SMOOTH')"
+  },
+  {
+   "id": "GREASE_PENCIL_THICKNESS",
+   "label": "Thickness",
+   "desc": "Change stroke thickness",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_THICKNESS')"
+  },
+  {
+   "id": "GREASE_PENCIL_LATTICE",
+   "label": "Lattice",
+   "desc": "Deform strokes using a lattice object",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_LATTICE')"
+  },
+  {
+   "id": "GREASE_PENCIL_DASH",
+   "label": "Dot Dash",
+   "desc": "Generate dot-dash styled strokes",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_DASH')"
+  },
+  {
+   "id": "GREASE_PENCIL_ARMATURE",
+   "label": "Armature",
+   "desc": "Deform stroke points using armature object",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_ARMATURE')"
+  },
+  {
+   "id": "GREASE_PENCIL_SHRINKWRAP",
+   "label": "Shrinkwrap",
+   "desc": "Project the shape onto another object",
+   "add_via": "bpy.ops.object.modifier_add(type='GREASE_PENCIL_SHRINKWRAP')"
+  },
+  {
+   "id": "CLOTH",
+   "label": "Cloth",
+   "desc": "Physic simulation for cloth",
+   "add_via": "bpy.ops.object.modifier_add(type='CLOTH')"
+  },
+  {
+   "id": "COLLISION",
+   "label": "Collision",
+   "desc": "For colliders participating in physics simulation, control which level in the modifier stack is used as the collision surface",
+   "add_via": "bpy.ops.object.modifier_add(type='COLLISION')"
+  },
+  {
+   "id": "DYNAMIC_PAINT",
+   "label": "Dynamic Paint",
+   "desc": "Turn objects into paint canvases and brushes, creating color attributes, image sequences, or displacement",
+   "add_via": "bpy.ops.object.modifier_add(type='DYNAMIC_PAINT')"
+  },
+  {
+   "id": "EXPLODE",
+   "label": "Explode",
+   "desc": "Break apart the mesh faces and let them follow particles",
+   "add_via": "bpy.ops.object.modifier_add(type='EXPLODE')"
+  },
+  {
+   "id": "FLUID",
+   "label": "Fluid",
+   "desc": "Physics simulation for fluids, like water, oil and smoke",
+   "add_via": "bpy.ops.object.modifier_add(type='FLUID')"
+  },
+  {
+   "id": "OCEAN",
+   "label": "Ocean",
+   "desc": "Generate a moving ocean surface",
+   "add_via": "bpy.ops.object.modifier_add(type='OCEAN')"
+  },
+  {
+   "id": "PARTICLE_INSTANCE",
+   "label": "Particle Instance",
+   "desc": "Duplicate mesh at the location of particles",
+   "add_via": "bpy.ops.object.modifier_add(type='PARTICLE_INSTANCE')"
+  },
+  {
+   "id": "PARTICLE_SYSTEM",
+   "label": "Particle System",
+   "desc": "Spawn particles from the shape",
+   "add_via": "bpy.ops.object.modifier_add(type='PARTICLE_SYSTEM')"
+  },
+  {
+   "id": "SOFT_BODY",
+   "label": "Soft Body",
+   "desc": "Simulate soft deformable objects",
+   "add_via": "bpy.ops.object.modifier_add(type='SOFT_BODY')"
+  },
+  {
+   "id": "SURFACE",
+   "label": "Surface",
+   "desc": "",
+   "add_via": "bpy.ops.object.modifier_add(type='SURFACE')"
+  }
+ ],
+ "constraints": [
+  {
+   "id": "CAMERA_SOLVER",
+   "label": "Camera Solver",
+   "desc": "",
+   "add_via": "bpy.ops.object.constraint_add(type='CAMERA_SOLVER')"
+  },
+  {
+   "id": "FOLLOW_TRACK",
+   "label": "Follow Track",
+   "desc": "",
+   "add_via": "bpy.ops.object.constraint_add(type='FOLLOW_TRACK')"
+  },
+  {
+   "id": "OBJECT_SOLVER",
+   "label": "Object Solver",
+   "desc": "",
+   "add_via": "bpy.ops.object.constraint_add(type='OBJECT_SOLVER')"
+  },
+  {
+   "id": "COPY_LOCATION",
+   "label": "Copy Location",
+   "desc": "Copy the location of a target (with an optional offset), so that they move together",
+   "add_via": "bpy.ops.object.constraint_add(type='COPY_LOCATION')"
+  },
+  {
+   "id": "COPY_ROTATION",
+   "label": "Copy Rotation",
+   "desc": "Copy the rotation of a target (with an optional offset), so that they rotate together",
+   "add_via": "bpy.ops.object.constraint_add(type='COPY_ROTATION')"
+  },
+  {
+   "id": "COPY_SCALE",
+   "label": "Copy Scale",
+   "desc": "Copy the scale factors of a target (with an optional offset), so that they are scaled by the same amount",
+   "add_via": "bpy.ops.object.constraint_add(type='COPY_SCALE')"
+  },
+  {
+   "id": "COPY_TRANSFORMS",
+   "label": "Copy Transforms",
+   "desc": "Copy all the transformations of a target, so that they move together",
+   "add_via": "bpy.ops.object.constraint_add(type='COPY_TRANSFORMS')"
+  },
+  {
+   "id": "LIMIT_DISTANCE",
+   "label": "Limit Distance",
+   "desc": "Restrict movements to within a certain distance of a target (at the time of constraint evaluation only)",
+   "add_via": "bpy.ops.object.constraint_add(type='LIMIT_DISTANCE')"
+  },
+  {
+   "id": "LIMIT_LOCATION",
+   "label": "Limit Location",
+   "desc": "Restrict movement along each axis within given ranges",
+   "add_via": "bpy.ops.object.constraint_add(type='LIMIT_LOCATION')"
+  },
+  {
+   "id": "LIMIT_ROTATION",
+   "label": "Limit Rotation",
+   "desc": "Restrict rotation along each axis within given ranges",
+   "add_via": "bpy.ops.object.constraint_add(type='LIMIT_ROTATION')"
+  },
+  {
+   "id": "LIMIT_SCALE",
+   "label": "Limit Scale",
+   "desc": "Restrict scaling along each axis with given ranges",
+   "add_via": "bpy.ops.object.constraint_add(type='LIMIT_SCALE')"
+  },
+  {
+   "id": "MAINTAIN_VOLUME",
+   "label": "Maintain Volume",
+   "desc": "Compensate for scaling one axis by applying suitable scaling to the other two axes",
+   "add_via": "bpy.ops.object.constraint_add(type='MAINTAIN_VOLUME')"
+  },
+  {
+   "id": "TRANSFORM",
+   "label": "Transformation",
+   "desc": "Use one transform property from target to control another (or same) property on owner",
+   "add_via": "bpy.ops.object.constraint_add(type='TRANSFORM')"
+  },
+  {
+   "id": "TRANSFORM_CACHE",
+   "label": "Transform Cache",
+   "desc": "Look up the transformation matrix from an external file",
+   "add_via": "bpy.ops.object.constraint_add(type='TRANSFORM_CACHE')"
+  },
+  {
+   "id": "CLAMP_TO",
+   "label": "Clamp To",
+   "desc": "Restrict movements to lie along a curve by remapping location along curve's longest axis",
+   "add_via": "bpy.ops.object.constraint_add(type='CLAMP_TO')"
+  },
+  {
+   "id": "DAMPED_TRACK",
+   "label": "Damped Track",
+   "desc": "Point towards a target by performing the smallest rotation necessary",
+   "add_via": "bpy.ops.object.constraint_add(type='DAMPED_TRACK')"
+  },
+  {
+   "id": "IK",
+   "label": "Inverse Kinematics",
+   "desc": "Control a chain of bones by specifying the endpoint target (Bones only)",
+   "add_via": "bpy.ops.object.constraint_add(type='IK')"
+  },
+  {
+   "id": "LOCKED_TRACK",
+   "label": "Locked Track",
+   "desc": "Rotate around the specified ('locked') axis to point towards a target",
+   "add_via": "bpy.ops.object.constraint_add(type='LOCKED_TRACK')"
+  },
+  {
+   "id": "SPLINE_IK",
+   "label": "Spline IK",
+   "desc": "Align chain of bones along a curve (Bones only)",
+   "add_via": "bpy.ops.object.constraint_add(type='SPLINE_IK')"
+  },
+  {
+   "id": "STRETCH_TO",
+   "label": "Stretch To",
+   "desc": "Stretch along Y-Axis to point towards a target",
+   "add_via": "bpy.ops.object.constraint_add(type='STRETCH_TO')"
+  },
+  {
+   "id": "TRACK_TO",
+   "label": "Track To",
+   "desc": "Legacy tracking constraint prone to twisting artifacts",
+   "add_via": "bpy.ops.object.constraint_add(type='TRACK_TO')"
+  },
+  {
+   "id": "ACTION",
+   "label": "Action",
+   "desc": "Use transform property of target to look up pose for owner from an Action",
+   "add_via": "bpy.ops.object.constraint_add(type='ACTION')"
+  },
+  {
+   "id": "ARMATURE",
+   "label": "Armature",
+   "desc": "Apply weight-blended transformation from multiple bones like the Armature modifier",
+   "add_via": "bpy.ops.object.constraint_add(type='ARMATURE')"
+  },
+  {
+   "id": "CHILD_OF",
+   "label": "Child Of",
+   "desc": "Make target the 'detachable' parent of owner",
+   "add_via": "bpy.ops.object.constraint_add(type='CHILD_OF')"
+  },
+  {
+   "id": "FLOOR",
+   "label": "Floor",
+   "desc": "Use position (and optionally rotation) of target to define a 'wall' or 'floor' that the owner cannot cross",
+   "add_via": "bpy.ops.object.constraint_add(type='FLOOR')"
+  },
+  {
+   "id": "FOLLOW_PATH",
+   "label": "Follow Path",
+   "desc": "Use to animate an object/bone following a path",
+   "add_via": "bpy.ops.object.constraint_add(type='FOLLOW_PATH')"
+  },
+  {
+   "id": "PIVOT",
+   "label": "Pivot",
+   "desc": "Change pivot point for transforms (buggy)",
+   "add_via": "bpy.ops.object.constraint_add(type='PIVOT')"
+  },
+  {
+   "id": "SHRINKWRAP",
+   "label": "Shrinkwrap",
+   "desc": "Restrict movements to surface of target mesh",
+   "add_via": "bpy.ops.object.constraint_add(type='SHRINKWRAP')"
+  }
+ ],
+ "shader_fx": [
+  {
+   "id": "FX_BLUR",
+   "label": "Blur",
+   "desc": "Apply Gaussian Blur to object"
+  },
+  {
+   "id": "FX_COLORIZE",
+   "label": "Colorize",
+   "desc": "Apply different tint effects"
+  },
+  {
+   "id": "FX_FLIP",
+   "label": "Flip",
+   "desc": "Flip image"
+  },
+  {
+   "id": "FX_GLOW",
+   "label": "Glow",
+   "desc": "Create a glow effect"
+  },
+  {
+   "id": "FX_PIXEL",
+   "label": "Pixelate",
+   "desc": "Pixelate image"
+  },
+  {
+   "id": "FX_RIM",
+   "label": "Rim",
+   "desc": "Add a rim to the image"
+  },
+  {
+   "id": "FX_SHADOW",
+   "label": "Shadow",
+   "desc": "Create a shadow effect"
+  },
+  {
+   "id": "FX_SWIRL",
+   "label": "Swirl",
+   "desc": "Create a rotation distortion"
+  },
+  {
+   "id": "FX_WAVE",
+   "label": "Wave Distortion",
+   "desc": "Apply sinusoidal deformation"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "CompositorNode",
+   "label": "Compositor Node",
+   "desc": "",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeAlphaOver",
+   "label": "Alpha Over",
+   "desc": "Overlay a foreground image onto a background image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeAntiAliasing",
+   "label": "Anti-Aliasing",
+   "desc": "Smooth away jagged edges",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBilateralblur",
+   "label": "Bilateral Blur",
+   "desc": "Adaptively blur image, while retaining sharp edges",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBlur",
+   "label": "Blur",
+   "desc": "Blur an image, using several blur modes",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBokehBlur",
+   "label": "Bokeh Blur",
+   "desc": "Generate a bokeh type blur similar to Defocus. Unlike defocus an in-focus region is defined in the compositor",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBokehImage",
+   "label": "Bokeh Image",
+   "desc": "Generate image with bokeh shape for use with the Bokeh Blur filter node",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBoxMask",
+   "label": "Box Mask",
+   "desc": "Create rectangular mask suitable for use as a simple matte",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeBrightContrast",
+   "label": "Brightness/Contrast",
+   "desc": "Adjust brightness and contrast",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeChannelMatte",
+   "label": "Channel Key",
+   "desc": "Create matte based on differences in color channels",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeChromaMatte",
+   "label": "Chroma Key",
+   "desc": "Create matte based on chroma values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeColorBalance",
+   "label": "Color Balance",
+   "desc": "Adjust color and values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeColorCorrection",
+   "label": "Color Correction",
+   "desc": "Adjust the color of an image, separately in several tonal ranges (highlights, midtones and shadows)",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeColorMatte",
+   "label": "Color Key",
+   "desc": "Create matte using a given color, for green or blue screen footage",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeColorSpill",
+   "label": "Color Spill",
+   "desc": "Remove colors from a blue or green screen, by reducing one RGB channel compared to the others",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombHSVA",
+   "label": "Combine HSVA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombRGBA",
+   "label": "Combine RGBA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombYCCA",
+   "label": "Combine YCbCrA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombYUVA",
+   "label": "Combine YUVA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombineColor",
+   "label": "Combine Color",
+   "desc": "Combine an image from its composite color channels",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCombineXYZ",
+   "label": "Combine XYZ",
+   "desc": "Combine a vector from its individual components",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeComposite",
+   "label": "Composite",
+   "desc": "Final render output",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeConvertColorSpace",
+   "label": "Convert Colorspace",
+   "desc": "Convert between color spaces",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCornerPin",
+   "label": "Corner Pin",
+   "desc": "Plane warp transformation using explicit corner values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCrop",
+   "label": "Crop",
+   "desc": "Crops image to a smaller region, either making the cropped area transparent or resizing the image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCryptomatte",
+   "label": "Cryptomatte (Legacy)",
+   "desc": "Deprecated. Use Cryptomatte Node instead",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCryptomatteV2",
+   "label": "Cryptomatte",
+   "desc": "Generate matte for individual objects and materials using Cryptomatte render passes",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCurveRGB",
+   "label": "RGB Curves",
+   "desc": "Perform level adjustments on each color channel of an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCurveVec",
+   "label": "Vector Curves",
+   "desc": "Map input vector components with curves",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeCustomGroup",
+   "label": "Compositor Custom Group",
+   "desc": "Custom Compositor Group Node for Python nodes",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDBlur",
+   "label": "Directional Blur",
+   "desc": "Blur an image along a direction",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDefocus",
+   "label": "Defocus",
+   "desc": "Apply depth of field in 2D, using a Z depth map or mask",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDenoise",
+   "label": "Denoise",
+   "desc": "Denoise renders from Cycles and other ray tracing renderers",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDespeckle",
+   "label": "Despeckle",
+   "desc": "Smooth areas of an image in which noise is noticeable, while leaving complex areas untouched",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDiffMatte",
+   "label": "Difference Key",
+   "desc": "Produce a matte that isolates foreground content by comparing it with a reference background image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDilateErode",
+   "label": "Dilate/Erode",
+   "desc": "Expand and shrink masks",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDisplace",
+   "label": "Displace",
+   "desc": "Displace pixel position using an offset vector",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDistanceMatte",
+   "label": "Distance Key",
+   "desc": "Create matte based on 3D distance between colors",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeDoubleEdgeMask",
+   "label": "Double Edge Mask",
+   "desc": "Create a gradient between two masks",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeEllipseMask",
+   "label": "Ellipse Mask",
+   "desc": "Create elliptical mask suitable for use as a simple matte or vignette mask",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeExposure",
+   "label": "Exposure",
+   "desc": "Adjust brightness using a camera exposure parameter",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeFilter",
+   "label": "Filter",
+   "desc": "Apply common image enhancement filters",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeFlip",
+   "label": "Flip",
+   "desc": "Flip an image along a defined axis",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeGamma",
+   "label": "Gamma",
+   "desc": "Apply gamma correction",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeGlare",
+   "label": "Glare",
+   "desc": "Add lens flares, fog and glows around bright parts of the image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeGroup",
+   "label": "Group",
+   "desc": "",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeHueCorrect",
+   "label": "Hue Correct",
+   "desc": "Adjust hue, saturation, and value with a curve",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeHueSat",
+   "label": "Hue/Saturation/Value",
+   "desc": "Apply a color transformation in the HSV color model",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeIDMask",
+   "label": "ID Mask",
+   "desc": "Create a matte from an object or material index pass",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeImage",
+   "label": "Image",
+   "desc": "Input image or movie file",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeImageCoordinates",
+   "label": "Image Coordinates",
+   "desc": "Returns the coordinates of the pixels of an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeImageInfo",
+   "label": "Image Info",
+   "desc": "Returns information about an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeInpaint",
+   "label": "Inpaint",
+   "desc": "Extend borders of an image into transparent or masked regions",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeInvert",
+   "label": "Invert Color",
+   "desc": "Invert colors, producing a negative",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeKeying",
+   "label": "Keying",
+   "desc": "Perform both chroma keying (to remove the backdrop) and despill (to correct color cast from the backdrop)",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeKeyingScreen",
+   "label": "Keying Screen",
+   "desc": "Create plates for use as a color reference for keying nodes",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeKuwahara",
+   "label": "Kuwahara",
+   "desc": "Apply smoothing filter that preserves edges, for stylized and painterly effects",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeLensdist",
+   "label": "Lens Distortion",
+   "desc": "Simulate distortion and dispersion from camera lenses",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeLevels",
+   "label": "Levels",
+   "desc": "Compute average and standard deviation of pixel values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeLumaMatte",
+   "label": "Luminance Key",
+   "desc": "Create a matte based on luminance (brightness) difference",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMapRange",
+   "label": "Map Range",
+   "desc": "Map an input value range into a destination range",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMapUV",
+   "label": "Map UV",
+   "desc": "Map a texture using UV coordinates, to apply a texture to objects in compositing",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMapValue",
+   "label": "Map Value",
+   "desc": "Scale, offset and clamp values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMask",
+   "label": "Mask",
+   "desc": "Input mask from a mask datablock, created in the image editor",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMath",
+   "label": "Math",
+   "desc": "Perform math operations",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMixRGB",
+   "label": "Mix",
+   "desc": "Blend two images together using various blending modes",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMovieClip",
+   "label": "Movie Clip",
+   "desc": "Input image or movie from a movie clip datablock, typically used for motion tracking",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeMovieDistortion",
+   "label": "Movie Distortion",
+   "desc": "Remove lens distortion from footage, using motion tracking camera lens settings",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeNormal",
+   "label": "Normal",
+   "desc": "Generate a normal vector and a dot product",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeNormalize",
+   "label": "Normalize",
+   "desc": "Map values to 0 to 1 range, based on the minimum and maximum pixel values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeOutputFile",
+   "label": "File Output",
+   "desc": "Write image file to disk",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodePixelate",
+   "label": "Pixelate",
+   "desc": "Reduce detail in an image by making individual pixels more prominent, for a blocky or mosaic-like appearance",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodePlaneTrackDeform",
+   "label": "Plane Track Deform",
+   "desc": "Replace flat planes in footage by another image, detected by plane tracks from motion tracking",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodePosterize",
+   "label": "Posterize",
+   "desc": "Reduce number of colors in an image, converting smooth gradients into sharp transitions",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodePremulKey",
+   "label": "Alpha Convert",
+   "desc": "Convert to and from premultiplied (associated) alpha",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeRGB",
+   "label": "RGB",
+   "desc": "A color picker",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeRGBToBW",
+   "label": "RGB to BW",
+   "desc": "Convert RGB input into grayscale using luminance",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeRLayers",
+   "label": "Render Layers",
+   "desc": "Input render passes from a scene render",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeRelativeToPixel",
+   "label": "Relative To Pixel",
+   "desc": "Converts values that are relative to the image size to be in terms of pixels",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeRotate",
+   "label": "Rotate",
+   "desc": "Rotate image by specified angle",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeScale",
+   "label": "Scale",
+   "desc": "Change the size of the image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSceneTime",
+   "label": "Scene Time",
+   "desc": "Input the current scene time in seconds or frames",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSepHSVA",
+   "label": "Separate HSVA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSepRGBA",
+   "label": "Separate RGBA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSepYCCA",
+   "label": "Separate YCbCrA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSepYUVA",
+   "label": "Separate YUVA (Legacy)",
+   "desc": "Deprecated",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSeparateColor",
+   "label": "Separate Color",
+   "desc": "Split an image into its composite color channels",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSeparateXYZ",
+   "label": "Separate XYZ",
+   "desc": "Split a vector into its individual components",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSetAlpha",
+   "label": "Set Alpha",
+   "desc": "Add an alpha channel to an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSplit",
+   "label": "Split",
+   "desc": "Combine two images for side-by-side display. Typically used in combination with a Viewer node",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeStabilize",
+   "label": "Stabilize 2D",
+   "desc": "Stabilize footage using 2D stabilization motion tracking settings",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSunBeams",
+   "label": "Sun Beams",
+   "desc": "Create sun beams based on image brightness",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSwitch",
+   "label": "Switch",
+   "desc": "Switch between two images using a checkbox",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeSwitchView",
+   "label": "Switch View",
+   "desc": "Combine the views (left and right) into a single stereo 3D output",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTexture",
+   "label": "Texture",
+   "desc": "Generate texture pattern from texture datablock",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTime",
+   "label": "Time Curve",
+   "desc": "Generate a factor value (from 0.0 to 1.0) between scene start and end time, using a curve mapping",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTonemap",
+   "label": "Tonemap",
+   "desc": "Map one set of colors to another in order to approximate the appearance of high dynamic range",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTrackPos",
+   "label": "Track Position",
+   "desc": "Provide information about motion tracking points, such as x and y values",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTransform",
+   "label": "Transform",
+   "desc": "Scale, translate and rotate an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeTranslate",
+   "label": "Translate",
+   "desc": "Offset an image",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeValToRGB",
+   "label": "Color Ramp",
+   "desc": "Map values to colors with the use of a gradient",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeValue",
+   "label": "Value",
+   "desc": "Input numerical values to other nodes in the node graph",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeVecBlur",
+   "label": "Vector Blur",
+   "desc": "Uses the vector speed render pass to blur the image pixels in 2D",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeViewer",
+   "label": "Viewer",
+   "desc": "Visualize data from inside a node graph, in the image editor or as a backdrop",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "CompositorNodeZcombine",
+   "label": "Z Combine",
+   "desc": "Combine two images using depth maps",
+   "tree": "CompositorNodeTree"
+  },
+  {
+   "id": "FunctionNode",
+   "label": "Function Node",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeAlignEulerToVector",
+   "label": "Align Euler to Vector",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeAlignRotationToVector",
+   "label": "Align Rotation to Vector",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeAxesToRotation",
+   "label": "Axes to Rotation",
+   "desc": "Create a rotation from a primary and (ideally orthogonal) secondary axis",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeAxisAngleToRotation",
+   "label": "Axis Angle to Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeBitMath",
+   "label": "Bit Math",
+   "desc": "Perform bitwise operations on 32-bit integers",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeBooleanMath",
+   "label": "Boolean Math",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeCombineColor",
+   "label": "Combine Color",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeCombineMatrix",
+   "label": "Combine Matrix",
+   "desc": "Construct a 4x4 matrix from its individual values",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeCombineTransform",
+   "label": "Combine Transform",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeCompare",
+   "label": "Compare",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeEulerToRotation",
+   "label": "Euler to Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeFindInString",
+   "label": "Find in String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeFloatToInt",
+   "label": "Float to Integer",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeFormatString",
+   "label": "Format String",
+   "desc": "Insert values into a string using a Python and path template compatible formatting syntax",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeHashValue",
+   "label": "Hash Value",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputBool",
+   "label": "Boolean",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputColor",
+   "label": "Color",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputInt",
+   "label": "Integer",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputRotation",
+   "label": "Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputSpecialCharacters",
+   "label": "Special Characters",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputString",
+   "label": "String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInputVector",
+   "label": "Vector",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeIntegerMath",
+   "label": "Integer Math",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInvertMatrix",
+   "label": "Invert Matrix",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeInvertRotation",
+   "label": "Invert Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeMatchString",
+   "label": "Match String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeMatrixDeterminant",
+   "label": "Matrix Determinant",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeMatrixMultiply",
+   "label": "Multiply Matrices",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeProjectPoint",
+   "label": "Project Point",
+   "desc": "Project a point using a matrix, using location, rotation, scale, and perspective divide",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeQuaternionToRotation",
+   "label": "Quaternion to Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRandomValue",
+   "label": "Random Value",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeReplaceString",
+   "label": "Replace String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotateEuler",
+   "label": "Rotate Euler",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotateRotation",
+   "label": "Rotate Rotation",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotateVector",
+   "label": "Rotate Vector",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotationToAxisAngle",
+   "label": "Rotation to Axis Angle",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotationToEuler",
+   "label": "Rotation to Euler",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeRotationToQuaternion",
+   "label": "Rotation to Quaternion",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeSeparateColor",
+   "label": "Separate Color",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeSeparateMatrix",
+   "label": "Separate Matrix",
+   "desc": "Split a 4x4 matrix into its individual values",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeSeparateTransform",
+   "label": "Separate Transform",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeSliceString",
+   "label": "Slice String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeStringLength",
+   "label": "String Length",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeTransformDirection",
+   "label": "Transform Direction",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeTransformPoint",
+   "label": "Transform Point",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeTransposeMatrix",
+   "label": "Transpose Matrix",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "FunctionNodeValueToString",
+   "label": "Value to String",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNode",
+   "label": "Geometry Node",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeAccumulateField",
+   "label": "Accumulate Field",
+   "desc": "Add the values of an evaluated field together and output the running total for each element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeAttributeDomainSize",
+   "label": "Domain Size",
+   "desc": "Retrieve the number of elements in a geometry for each attribute domain",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeAttributeStatistic",
+   "label": "Attribute Statistic",
+   "desc": "Calculate statistics about a data set from a field evaluated on a geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeBake",
+   "label": "Bake",
+   "desc": "Cache the incoming data so that it can be used without recomputation",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeBlurAttribute",
+   "label": "Blur Attribute",
+   "desc": "Mix attribute values of neighboring elements",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeBoundBox",
+   "label": "Bounding Box",
+   "desc": "Calculate the limits of a geometry's positions and generate a box mesh with those dimensions",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCameraInfo",
+   "label": "Camera Info",
+   "desc": "Retrieve information from a camera object",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCaptureAttribute",
+   "label": "Capture Attribute",
+   "desc": "Store the result of a field on a geometry and output the data as a node socket. Allows remembering or interpolating data as the geometry changes, such as positions before deformation",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeClosureInput",
+   "label": "Closure Input",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeClosureOutput",
+   "label": "Closure Output",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCollectionInfo",
+   "label": "Collection Info",
+   "desc": "Retrieve geometry instances from a collection",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCombineBundle",
+   "label": "Combine Bundle",
+   "desc": "Combine multiple socket values into one.",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeConvexHull",
+   "label": "Convex Hull",
+   "desc": "Create a mesh that encloses all points in the input geometry with the smallest number of points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCornersOfEdge",
+   "label": "Corners of Edge",
+   "desc": "Retrieve face corners connected to edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCornersOfFace",
+   "label": "Corners of Face",
+   "desc": "Retrieve corners that make up a face",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCornersOfVertex",
+   "label": "Corners of Vertex",
+   "desc": "Retrieve face corners connected to vertices",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveArc",
+   "label": "Arc",
+   "desc": "Generate a poly spline arc",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveEndpointSelection",
+   "label": "Endpoint Selection",
+   "desc": "Provide a selection for an arbitrary number of endpoints in each spline",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveHandleTypeSelection",
+   "label": "Handle Type Selection",
+   "desc": "Provide a selection based on the handle types of B\u00e9zier control points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveLength",
+   "label": "Curve Length",
+   "desc": "Retrieve the length of all splines added together",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveOfPoint",
+   "label": "Curve of Point",
+   "desc": "Retrieve the curve a control point is part of",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurvePrimitiveBezierSegment",
+   "label": "B\u00e9zier Segment",
+   "desc": "Generate a 2D B\u00e9zier spline from the given control points and handles",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurvePrimitiveCircle",
+   "label": "Curve Circle",
+   "desc": "Generate a poly spline circle",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurvePrimitiveLine",
+   "label": "Curve Line",
+   "desc": "Generate a poly spline line with two points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurvePrimitiveQuadrilateral",
+   "label": "Quadrilateral",
+   "desc": "Generate a polygon with four points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveQuadraticBezier",
+   "label": "Quadratic B\u00e9zier",
+   "desc": "Generate a poly spline in a parabola shape with control points positions",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveSetHandles",
+   "label": "Set Handle Type",
+   "desc": "Set the handle type for the control points of a B\u00e9zier curve",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveSpiral",
+   "label": "Spiral",
+   "desc": "Generate a poly spline in a spiral shape",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveSplineType",
+   "label": "Set Spline Type",
+   "desc": "Change the type of curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveStar",
+   "label": "Star",
+   "desc": "Generate a poly spline in a star pattern by connecting alternating points of two circles",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveToMesh",
+   "label": "Curve to Mesh",
+   "desc": "Convert curves into a mesh, optionally with a custom profile shape defined by curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurveToPoints",
+   "label": "Curve to Points",
+   "desc": "Generate a point cloud by sampling positions along curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCurvesToGreasePencil",
+   "label": "Curves to Grease Pencil",
+   "desc": "Convert the curves in each top-level instance into Grease Pencil layer",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeCustomGroup",
+   "label": "Geometry Custom Group",
+   "desc": "Custom Geometry Group Node for Python nodes",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDeformCurvesOnSurface",
+   "label": "Deform Curves on Surface",
+   "desc": "Translate and rotate curves based on changes between the object's original and evaluated surface mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDeleteGeometry",
+   "label": "Delete Geometry",
+   "desc": "Remove selected elements of a geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDistributePointsInGrid",
+   "label": "Distribute Points in Grid",
+   "desc": "Generate points inside a volume grid",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDistributePointsInVolume",
+   "label": "Distribute Points in Volume",
+   "desc": "Generate points inside a volume",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDistributePointsOnFaces",
+   "label": "Distribute Points on Faces",
+   "desc": "Generate points spread out on the surface of a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDualMesh",
+   "label": "Dual Mesh",
+   "desc": "Convert Faces into vertices and vertices into faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeDuplicateElements",
+   "label": "Duplicate Elements",
+   "desc": "Generate an arbitrary number copies of each selected input element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEdgePathsToCurves",
+   "label": "Edge Paths to Curves",
+   "desc": "Output curves following paths across mesh edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEdgePathsToSelection",
+   "label": "Edge Paths to Selection",
+   "desc": "Output a selection of edges by following paths across mesh edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEdgesOfCorner",
+   "label": "Edges of Corner",
+   "desc": "Retrieve the edges on both sides of a face corner",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEdgesOfVertex",
+   "label": "Edges of Vertex",
+   "desc": "Retrieve the edges connected to each vertex",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEdgesToFaceGroups",
+   "label": "Edges to Face Groups",
+   "desc": "Group faces into regions surrounded by the selected boundary edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeEvaluateClosure",
+   "label": "Evaluate Closure",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeExtrudeMesh",
+   "label": "Extrude Mesh",
+   "desc": "Generate new vertices, edges, or faces from selected elements and move them based on an offset while keeping them connected by their boundary",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFaceOfCorner",
+   "label": "Face of Corner",
+   "desc": "Retrieve the face each face corner is part of",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFieldAtIndex",
+   "label": "Evaluate at Index",
+   "desc": "Retrieve data of other elements in the context's geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFieldAverage",
+   "label": "Field Average",
+   "desc": "Calculate the mean and median of a given field",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFieldMinAndMax",
+   "label": "Field Min & Max",
+   "desc": "Calculate the minimum and maximum of a given field",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFieldOnDomain",
+   "label": "Evaluate on Domain",
+   "desc": "Retrieve values from a field on a different domain besides the domain from the context",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFieldVariance",
+   "label": "Field Variance",
+   "desc": "Calculate the standard deviation and variance of a given field",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFillCurve",
+   "label": "Fill Curve",
+   "desc": "Generate a mesh on the XY plane with faces on the inside of input curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFilletCurve",
+   "label": "Fillet Curve",
+   "desc": "Round corners by generating circular arcs on each control point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeFlipFaces",
+   "label": "Flip Faces",
+   "desc": "Reverse the order of the vertices and edges of selected faces, flipping their normal direction",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeForeachGeometryElementInput",
+   "label": "For Each Geometry Element Input",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeForeachGeometryElementOutput",
+   "label": "For Each Geometry Element Output",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGeometryToInstance",
+   "label": "Geometry to Instance",
+   "desc": "Convert each input geometry into an instance, which can be much faster than the Join Geometry node when the inputs are large",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGetNamedGrid",
+   "label": "Get Named Grid",
+   "desc": "Get volume grid from a volume geometry with the specified name",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGizmoDial",
+   "label": "Dial Gizmo",
+   "desc": "Show a dial gizmo in the viewport for a value",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGizmoLinear",
+   "label": "Linear Gizmo",
+   "desc": "Show a linear gizmo in the viewport for a value",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGizmoTransform",
+   "label": "Transform Gizmo",
+   "desc": "Show a transform gizmo in the viewport",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGreasePencilToCurves",
+   "label": "Grease Pencil to Curves",
+   "desc": "Convert Grease Pencil layers into curve instances",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGridInfo",
+   "label": "Grid Info",
+   "desc": "Retrieve information about a volume grid",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGridToMesh",
+   "label": "Grid to Mesh",
+   "desc": "Generate a mesh on the \"surface\" of a volume grid",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeGroup",
+   "label": "Group",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImageInfo",
+   "label": "Image Info",
+   "desc": "Retrieve information about an image",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImageTexture",
+   "label": "Image Texture",
+   "desc": "Sample values from an image texture",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportCSV",
+   "label": "Import CSV",
+   "desc": "Import geometry from an CSV file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportOBJ",
+   "label": "Import OBJ",
+   "desc": "Import geometry from an OBJ file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportPLY",
+   "label": "Import PLY",
+   "desc": "Import a point cloud from a PLY file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportSTL",
+   "label": "Import STL",
+   "desc": "Import a mesh from an STL file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportText",
+   "label": "Import Text",
+   "desc": "Import a string from a text file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeImportVDB",
+   "label": "Import VDB",
+   "desc": "Import volume data from a .vdb file",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeIndexOfNearest",
+   "label": "Index of Nearest",
+   "desc": "Find the nearest element in a group. Similar to the \"Sample Nearest\" node",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeIndexSwitch",
+   "label": "Index Switch",
+   "desc": "Choose between an arbitrary number of values with an index",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputActiveCamera",
+   "label": "Active Camera",
+   "desc": "Retrieve the scene's active camera",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputCollection",
+   "label": "Collection",
+   "desc": "Output a single collection",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputCurveHandlePositions",
+   "label": "Curve Handle Positions",
+   "desc": "Retrieve the position of each B\u00e9zier control point's handles",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputCurveTilt",
+   "label": "Curve Tilt",
+   "desc": "Retrieve the angle at each control point used to twist the curve's normal around its tangent",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputEdgeSmooth",
+   "label": "Is Edge Smooth",
+   "desc": "Retrieve whether each edge is marked for smooth or split normals",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputID",
+   "label": "ID",
+   "desc": "Retrieve a stable random identifier value from the \"id\" attribute on the point domain, or the index if the attribute does not exist",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputImage",
+   "label": "Image",
+   "desc": "Input an image data-block",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputIndex",
+   "label": "Index",
+   "desc": "Retrieve an integer value indicating the position of each element in the list, starting at zero",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputInstanceBounds",
+   "label": "Instance Bounds",
+   "desc": "Calculate position bounds of each instance's geometry set",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputInstanceRotation",
+   "label": "Instance Rotation",
+   "desc": "Retrieve the rotation of each instance in the geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputInstanceScale",
+   "label": "Instance Scale",
+   "desc": "Retrieve the scale of each instance in the geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMaterial",
+   "label": "Material",
+   "desc": "Output a single material",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMaterialIndex",
+   "label": "Material Index",
+   "desc": "Retrieve the index of the material used for each element in the geometry's list of materials",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshEdgeAngle",
+   "label": "Edge Angle",
+   "desc": "The angle between the normals of connected manifold faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshEdgeNeighbors",
+   "label": "Edge Neighbors",
+   "desc": "Retrieve the number of faces that use each edge as one of their sides",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshEdgeVertices",
+   "label": "Edge Vertices",
+   "desc": "Retrieve topology information relating to each edge of a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshFaceArea",
+   "label": "Face Area",
+   "desc": "Calculate the surface area of a mesh's faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshFaceIsPlanar",
+   "label": "Is Face Planar",
+   "desc": "Retrieve whether all triangles in a face are on the same plane, i.e. whether they have the same normal",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshFaceNeighbors",
+   "label": "Face Neighbors",
+   "desc": "Retrieve topology information relating to each face of a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshIsland",
+   "label": "Mesh Island",
+   "desc": "Retrieve information about separate connected regions in a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputMeshVertexNeighbors",
+   "label": "Vertex Neighbors",
+   "desc": "Retrieve topology information relating to each vertex of a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputNamedAttribute",
+   "label": "Named Attribute",
+   "desc": "Retrieve the data of a specified attribute",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputNamedLayerSelection",
+   "label": "Named Layer Selection",
+   "desc": "Output a selection of a Grease Pencil layer",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputNormal",
+   "label": "Normal",
+   "desc": "Retrieve a unit length vector indicating the direction pointing away from the geometry at each element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputObject",
+   "label": "Object",
+   "desc": "Output a single object",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputPosition",
+   "label": "Position",
+   "desc": "Retrieve a vector indicating the location of each element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputRadius",
+   "label": "Radius",
+   "desc": "Retrieve the radius at each point on curve or point cloud geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputSceneTime",
+   "label": "Scene Time",
+   "desc": "Retrieve the current time in the scene's animation in units of seconds or frames",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputShadeSmooth",
+   "label": "Is Face Smooth",
+   "desc": "Retrieve whether each face is marked for smooth or sharp normals",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputShortestEdgePaths",
+   "label": "Shortest Edge Paths",
+   "desc": "Find the shortest paths along mesh edges to selected end vertices, with customizable cost per edge",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputSplineCyclic",
+   "label": "Is Spline Cyclic",
+   "desc": "Retrieve whether each spline endpoint connects to the beginning",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputSplineResolution",
+   "label": "Spline Resolution",
+   "desc": "Retrieve the number of evaluated points that will be generated for every control point on curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInputTangent",
+   "label": "Curve Tangent",
+   "desc": "Retrieve the direction of curves at each control point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInstanceOnPoints",
+   "label": "Instance on Points",
+   "desc": "Generate a reference to geometry at each of the input points, without duplicating its underlying data",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInstanceTransform",
+   "label": "Instance Transform",
+   "desc": "Retrieve the full transformation of each instance in the geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInstancesToPoints",
+   "label": "Instances to Points",
+   "desc": "Generate points at the origins of instances.\nNote: Nested instances are not affected by this node",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeInterpolateCurves",
+   "label": "Interpolate Curves",
+   "desc": "Generate new curves on points by interpolating between existing curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeIsViewport",
+   "label": "Is Viewport",
+   "desc": "Retrieve whether the nodes are being evaluated for the viewport rather than the final render",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeJoinGeometry",
+   "label": "Join Geometry",
+   "desc": "Merge separately generated geometries into a single one",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMaterialSelection",
+   "label": "Material Selection",
+   "desc": "Provide a selection of faces that use the specified material",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMenuSwitch",
+   "label": "Menu Switch",
+   "desc": "Select from multiple inputs by name",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMergeByDistance",
+   "label": "Merge by Distance",
+   "desc": "Merge vertices or points within a given distance",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMergeLayers",
+   "label": "Merge Layers",
+   "desc": "Join groups of Grease Pencil layers into one",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshBoolean",
+   "label": "Mesh Boolean",
+   "desc": "Cut, subtract, or join multiple mesh inputs",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshCircle",
+   "label": "Mesh Circle",
+   "desc": "Generate a circular ring of edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshCone",
+   "label": "Cone",
+   "desc": "Generate a cone mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshCube",
+   "label": "Cube",
+   "desc": "Generate a cuboid mesh with variable side lengths and subdivisions",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshCylinder",
+   "label": "Cylinder",
+   "desc": "Generate a cylinder mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshFaceSetBoundaries",
+   "label": "Face Group Boundaries",
+   "desc": "Find edges on the boundaries between groups of faces with the same ID value",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshGrid",
+   "label": "Grid",
+   "desc": "Generate a planar mesh on the XY plane",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshIcoSphere",
+   "label": "Ico Sphere",
+   "desc": "Generate a spherical mesh that consists of equally sized triangles",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshLine",
+   "label": "Mesh Line",
+   "desc": "Generate vertices in a line and connect them with edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshToCurve",
+   "label": "Mesh to Curve",
+   "desc": "Generate a curve from a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshToDensityGrid",
+   "label": "Mesh to Density Grid",
+   "desc": "Create a filled volume grid from a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshToPoints",
+   "label": "Mesh to Points",
+   "desc": "Generate a point cloud from a mesh's vertices",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshToSDFGrid",
+   "label": "Mesh to SDF Grid",
+   "desc": "Create a signed distance volume grid from a mesh",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshToVolume",
+   "label": "Mesh to Volume",
+   "desc": "Create a fog volume with the shape of the input mesh's surface",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeMeshUVSphere",
+   "label": "UV Sphere",
+   "desc": "Generate a spherical mesh with quads, except for triangles at the top and bottom",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeObjectInfo",
+   "label": "Object Info",
+   "desc": "Retrieve information from an object",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeOffsetCornerInFace",
+   "label": "Offset Corner in Face",
+   "desc": "Retrieve corners in the same face as another",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeOffsetPointInCurve",
+   "label": "Offset Point in Curve",
+   "desc": "Offset a control point index within its curve",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePoints",
+   "label": "Points",
+   "desc": "Generate a point cloud with positions and radii defined by fields",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePointsOfCurve",
+   "label": "Points of Curve",
+   "desc": "Retrieve a point index within a curve",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePointsToCurves",
+   "label": "Points to Curves",
+   "desc": "Split all points to curve by its group ID and reorder by weight",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePointsToSDFGrid",
+   "label": "Points to SDF Grid",
+   "desc": "Create a signed distance volume grid from points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePointsToVertices",
+   "label": "Points to Vertices",
+   "desc": "Generate a mesh vertex for each point cloud point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodePointsToVolume",
+   "label": "Points to Volume",
+   "desc": "Generate a fog volume sphere around every point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeProximity",
+   "label": "Geometry Proximity",
+   "desc": "Compute the closest location on the target geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRaycast",
+   "label": "Raycast",
+   "desc": "Cast rays from the context geometry onto a target geometry, and retrieve information from each hit point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRealizeInstances",
+   "label": "Realize Instances",
+   "desc": "Convert instances into real geometry data",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRemoveAttribute",
+   "label": "Remove Named Attribute",
+   "desc": "Delete an attribute with a specified name from a geometry. Typically used to optimize performance",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRepeatInput",
+   "label": "Repeat Input",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRepeatOutput",
+   "label": "Repeat Output",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeReplaceMaterial",
+   "label": "Replace Material",
+   "desc": "Swap one material with another",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeResampleCurve",
+   "label": "Resample Curve",
+   "desc": "Generate a poly spline for each input spline",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeReverseCurve",
+   "label": "Reverse Curve",
+   "desc": "Change the direction of curves by swapping their start and end data",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeRotateInstances",
+   "label": "Rotate Instances",
+   "desc": "Rotate geometry instances in local or global space",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSDFGridBoolean",
+   "label": "SDF Grid Boolean",
+   "desc": "Cut, subtract, or join multiple SDF volume grid inputs",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleCurve",
+   "label": "Sample Curve",
+   "desc": "Retrieve data from a point on a curve at a certain distance from its start",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleGrid",
+   "label": "Sample Grid",
+   "desc": "",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleGridIndex",
+   "label": "Sample Grid Index",
+   "desc": "Retrieve volume grid values at specific voxels",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleIndex",
+   "label": "Sample Index",
+   "desc": "Retrieve values from specific geometry elements",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleNearest",
+   "label": "Sample Nearest",
+   "desc": "Find the element of a geometry closest to a position. Similar to the \"Index of Nearest\" node",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleNearestSurface",
+   "label": "Sample Nearest Surface",
+   "desc": "Calculate the interpolated value of a mesh attribute on the closest point of its surface",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSampleUVSurface",
+   "label": "Sample UV Surface",
+   "desc": "Calculate the interpolated values of a mesh attribute at a UV coordinate",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeScaleElements",
+   "label": "Scale Elements",
+   "desc": "Scale groups of connected edges and faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeScaleInstances",
+   "label": "Scale Instances",
+   "desc": "Scale geometry instances in local or global space",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSelfObject",
+   "label": "Self Object",
+   "desc": "Retrieve the object that contains the geometry nodes modifier currently being executed",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSeparateBundle",
+   "label": "Separate Bundle",
+   "desc": "Split a bundle into multiple sockets.",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSeparateComponents",
+   "label": "Separate Components",
+   "desc": "Split a geometry into a separate output for each type of data in the geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSeparateGeometry",
+   "label": "Separate Geometry",
+   "desc": "Split a geometry into two geometry outputs based on a selection",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetCurveHandlePositions",
+   "label": "Set Handle Positions",
+   "desc": "Set the positions for the handles of B\u00e9zier curves",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetCurveNormal",
+   "label": "Set Curve Normal",
+   "desc": "Set the evaluation mode for curve normals",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetCurveRadius",
+   "label": "Set Curve Radius",
+   "desc": "Set the radius of the curve at each control point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetCurveTilt",
+   "label": "Set Curve Tilt",
+   "desc": "Set the tilt angle at each curve control point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetGeometryName",
+   "label": "Set Geometry Name",
+   "desc": "Set the name of a geometry for easier debugging",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetGreasePencilColor",
+   "label": "Set Grease Pencil Color",
+   "desc": "Set color and opacity attributes on Grease Pencil geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetGreasePencilDepth",
+   "label": "Set Grease Pencil Depth",
+   "desc": "Set the Grease Pencil depth order to use",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetGreasePencilSoftness",
+   "label": "Set Grease Pencil Softness",
+   "desc": "Set softness attribute on Grease Pencil geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetID",
+   "label": "Set ID",
+   "desc": "Set the id attribute on the input geometry, mainly used internally for randomizing",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetInstanceTransform",
+   "label": "Set Instance Transform",
+   "desc": "Set the transformation matrix of every instance",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetMaterial",
+   "label": "Set Material",
+   "desc": "Assign a material to geometry elements",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetMaterialIndex",
+   "label": "Set Material Index",
+   "desc": "Set the material index for each selected geometry element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetMeshNormal",
+   "label": "Set Mesh Normal",
+   "desc": "Store a normal vector for each mesh element",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetPointRadius",
+   "label": "Set Point Radius",
+   "desc": "Set the display size of point cloud points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetPosition",
+   "label": "Set Position",
+   "desc": "Set the location of each point",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetShadeSmooth",
+   "label": "Set Shade Smooth",
+   "desc": "Control the smoothness of mesh normals around each face by changing the \"shade smooth\" attribute",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetSplineCyclic",
+   "label": "Set Spline Cyclic",
+   "desc": "Control whether each spline loops back on itself by changing the \"cyclic\" attribute",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSetSplineResolution",
+   "label": "Set Spline Resolution",
+   "desc": "Control how many evaluated points should be generated on every curve segment",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSimulationInput",
+   "label": "Simulation Input",
+   "desc": "Input data for the simulation zone",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSimulationOutput",
+   "label": "Simulation Output",
+   "desc": "Output data from the simulation zone",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSortElements",
+   "label": "Sort Elements",
+   "desc": "Rearrange geometry elements, changing their indices",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSplineLength",
+   "label": "Spline Length",
+   "desc": "Retrieve the total length of each spline, as a distance or as a number of points",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSplineParameter",
+   "label": "Spline Parameter",
+   "desc": "Retrieve how far along each spline a control point is",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSplitEdges",
+   "label": "Split Edges",
+   "desc": "Duplicate mesh edges and break connections with the surrounding faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSplitToInstances",
+   "label": "Split to Instances",
+   "desc": "Create separate geometries containing the elements from the same group",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeStoreNamedAttribute",
+   "label": "Store Named Attribute",
+   "desc": "Store the result of a field on a geometry as an attribute with the specified name",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeStoreNamedGrid",
+   "label": "Store Named Grid",
+   "desc": "Store grid data in a volume geometry with the specified name",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeStringJoin",
+   "label": "Join Strings",
+   "desc": "Combine any number of input strings",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeStringToCurves",
+   "label": "String to Curves",
+   "desc": "Generate a paragraph of text with a specific font, using a curve instance to store each character",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSubdivideCurve",
+   "label": "Subdivide Curve",
+   "desc": "Dividing each curve segment into a specified number of pieces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSubdivideMesh",
+   "label": "Subdivide Mesh",
+   "desc": "Divide mesh faces into smaller ones without changing the shape or volume, using linear interpolation to place the new vertices",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSubdivisionSurface",
+   "label": "Subdivision Surface",
+   "desc": "Divide mesh faces to form a smooth surface, using the Catmull-Clark subdivision method",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeSwitch",
+   "label": "Switch",
+   "desc": "Switch between two inputs",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeTool3DCursor",
+   "label": "3D Cursor",
+   "desc": "The scene's 3D cursor location and rotation",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolActiveElement",
+   "label": "Active Element",
+   "desc": "Active element indices of the edited geometry, for tool execution",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolFaceSet",
+   "label": "Face Set",
+   "desc": "Each face's sculpt face set value",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolMousePosition",
+   "label": "Mouse Position",
+   "desc": "Retrieve the position of the mouse cursor",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolSelection",
+   "label": "Selection",
+   "desc": "User selection of the edited geometry, for tool execution",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolSetFaceSet",
+   "label": "Set Face Set",
+   "desc": "Set sculpt face set values for faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeToolSetSelection",
+   "label": "Set Selection",
+   "desc": "Set selection of the edited geometry, for tool execution",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeTransform",
+   "label": "Transform Geometry",
+   "desc": "Translate, rotate or scale the geometry",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeTranslateInstances",
+   "label": "Translate Instances",
+   "desc": "Move top-level geometry instances in local or global space",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeTriangulate",
+   "label": "Triangulate",
+   "desc": "Convert all faces in a mesh to triangular faces",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeTrimCurve",
+   "label": "Trim Curve",
+   "desc": "Shorten curves by removing portions at the start or end",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeUVPackIslands",
+   "label": "Pack UV Islands",
+   "desc": "Scale islands of a UV map and move them so they fill the UV space as much as possible",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeUVUnwrap",
+   "label": "UV Unwrap",
+   "desc": "Generate a UV map based on seam edges",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeVertexOfCorner",
+   "label": "Vertex of Corner",
+   "desc": "Retrieve the vertex each face corner is attached to",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeViewer",
+   "label": "Viewer",
+   "desc": "Display the input data in the Spreadsheet Editor",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeViewportTransform",
+   "label": "Viewport Transform",
+   "desc": "Retrieve the view direction and location of the 3D viewport",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeVolumeCube",
+   "label": "Volume Cube",
+   "desc": "Generate a dense volume with a field that controls the density at each grid voxel based on its position",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeVolumeToMesh",
+   "label": "Volume to Mesh",
+   "desc": "Generate a mesh on the \"surface\" of a volume",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "GeometryNodeWarning",
+   "label": "Warning",
+   "desc": "Create custom warnings in node groups",
+   "tree": "GeometryNodeTree"
+  },
+  {
+   "id": "NodeCustomGroup",
+   "label": "Custom Group",
+   "desc": "Base node type for custom registered node group types",
+   "tree": null
+  },
+  {
+   "id": "NodeFrame",
+   "label": "Frame",
+   "desc": "Collect related nodes together in a common area. Useful for organization when the re-usability of a node group is not required",
+   "tree": null
+  },
+  {
+   "id": "NodeGroup",
+   "label": "NodeGroup",
+   "desc": "",
+   "tree": null
+  },
+  {
+   "id": "NodeGroupInput",
+   "label": "Group Input",
+   "desc": "Expose connected data from inside a node group as inputs to its interface",
+   "tree": null
+  },
+  {
+   "id": "NodeGroupOutput",
+   "label": "Group Output",
+   "desc": "Output data from inside of a node group",
+   "tree": null
+  },
+  {
+   "id": "NodeInternal",
+   "label": "NodeInternal",
+   "desc": "",
+   "tree": null
+  },
+  {
+   "id": "NodeReroute",
+   "label": "Reroute",
+   "desc": "A single-socket organization tool that supports one input and multiple outputs",
+   "tree": null
+  },
+  {
+   "id": "ShaderNode",
+   "label": "Shader Node",
+   "desc": "Material shader node",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeAddShader",
+   "label": "Add Shader",
+   "desc": "Add two Shaders together",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeAmbientOcclusion",
+   "label": "Ambient Occlusion",
+   "desc": "Compute how much the hemisphere above the shading point is occluded, for example to add weathering effects to corners.\nNote: For Cycles, this may slow down renders significantly",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeAttribute",
+   "label": "Attribute",
+   "desc": "Retrieve attributes attached to objects or geometry",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBackground",
+   "label": "Background",
+   "desc": "Add background light emission.\nNote: This node should only be used for the world surface output",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBevel",
+   "label": "Bevel",
+   "desc": "Generates normals with round corners.\nNote: only supported in Cycles, and may slow down renders",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBlackbody",
+   "label": "Blackbody",
+   "desc": "Convert a blackbody temperature to an RGB value",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBrightContrast",
+   "label": "Brightness/Contrast",
+   "desc": "Control the brightness and contrast of the input color",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfAnisotropic",
+   "label": "Glossy BSDF",
+   "desc": "Reflection with microfacet distribution, used for materials such as metal or mirrors",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfDiffuse",
+   "label": "Diffuse BSDF",
+   "desc": "Lambertian and Oren-Nayar diffuse reflection",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfGlass",
+   "label": "Glass BSDF",
+   "desc": "Glass-like shader mixing refraction and reflection at grazing angles",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfHair",
+   "label": "Hair BSDF",
+   "desc": "Reflection and transmission shaders optimized for hair rendering",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfHairPrincipled",
+   "label": "Principled Hair BSDF",
+   "desc": "Physically-based, easy-to-use shader for rendering hair and fur",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfMetallic",
+   "label": "Metallic BSDF",
+   "desc": "Metallic reflection with microfacet distribution, and metallic fresnel",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfPrincipled",
+   "label": "Principled BSDF",
+   "desc": "Physically-based, easy-to-use shader for rendering surface materials, based on the OpenPBR model",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfRayPortal",
+   "label": "Ray Portal BSDF",
+   "desc": "Continue tracing from an arbitrary new position and in a new direction",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfRefraction",
+   "label": "Refraction BSDF",
+   "desc": "Glossy refraction with sharp or microfacet distribution, typically used for materials that transmit light",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfSheen",
+   "label": "Sheen BSDF",
+   "desc": "Reflection for materials such as cloth.\nTypically mixed with other shaders (such as a Diffuse Shader) and is not particularly useful on its own",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfToon",
+   "label": "Toon BSDF",
+   "desc": "Diffuse and Glossy shaders with cartoon light effects",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfTranslucent",
+   "label": "Translucent BSDF",
+   "desc": "Lambertian diffuse transmission",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBsdfTransparent",
+   "label": "Transparent BSDF",
+   "desc": "Transparency without refraction, passing straight through the surface as if there were no geometry",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeBump",
+   "label": "Bump",
+   "desc": "Generate a perturbed normal from a height texture for bump mapping. Typically used for faking highly detailed surfaces",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCameraData",
+   "label": "Camera Data",
+   "desc": "Retrieve information about the camera and how it relates to the current shading point's position",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeClamp",
+   "label": "Clamp",
+   "desc": "Clamp a value between a minimum and a maximum",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCombineColor",
+   "label": "Combine Color",
+   "desc": "Create a color from individual components using multiple models",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCombineHSV",
+   "label": "Combine HSV (Legacy)",
+   "desc": "Deprecated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCombineRGB",
+   "label": "Combine RGB (Legacy)",
+   "desc": "Deprecated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCombineXYZ",
+   "label": "Combine XYZ",
+   "desc": "Create a vector from X, Y, and Z components",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeCustomGroup",
+   "label": "Shader Custom Group",
+   "desc": "Custom Shader Group Node for Python nodes",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeDisplacement",
+   "label": "Displacement",
+   "desc": "Displace the surface along the surface normal",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeEeveeSpecular",
+   "label": "Specular BSDF",
+   "desc": "Similar to the Principled BSDF node but uses the specular workflow instead of metallic, which functions by specifying the facing (along normal) reflection color. Energy is not conserved, so the result may not be physically accurate",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeEmission",
+   "label": "Emission",
+   "desc": "Lambertian emission shader",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeFloatCurve",
+   "label": "Float Curve",
+   "desc": "Map an input float to a curve and outputs a float value",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeFresnel",
+   "label": "Fresnel",
+   "desc": "Produce a blending factor depending on the angle between the surface normal and the view direction using Fresnel equations.\nTypically used for mixing reflections at grazing angles",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeGamma",
+   "label": "Gamma",
+   "desc": "Apply a gamma correction",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeGroup",
+   "label": "Group",
+   "desc": "",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeHairInfo",
+   "label": "Curves Info",
+   "desc": "Retrieve hair curve information",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeHoldout",
+   "label": "Holdout",
+   "desc": "Create a \"hole\" in the image with zero alpha transparency, which is useful for compositing.\nNote: the holdout shader can only create alpha when transparency is enabled in the film settings",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeHueSaturation",
+   "label": "Hue/Saturation/Value",
+   "desc": "Apply a color transformation in the HSV color model",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeInvert",
+   "label": "Invert Color",
+   "desc": "Invert a color, producing a negative",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeLayerWeight",
+   "label": "Layer Weight",
+   "desc": "Produce a blending factor depending on the angle between the surface normal and the view direction.\nTypically used for layering shaders with the Mix Shader node",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeLightFalloff",
+   "label": "Light Falloff",
+   "desc": "Manipulate how light intensity decreases over distance. Typically used for non-physically-based effects; in reality light always falls off quadratically",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeLightPath",
+   "label": "Light Path",
+   "desc": "Retrieve the type of incoming ray for which the shader is being executed.\nTypically used for non-physically-based tricks",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMapRange",
+   "label": "Map Range",
+   "desc": "Remap a value from a range to a target range",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMapping",
+   "label": "Mapping",
+   "desc": "Transform the input vector by applying translation, rotation, and scale",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMath",
+   "label": "Math",
+   "desc": "Perform math operations",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMix",
+   "label": "Mix",
+   "desc": "Mix values by a factor",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMixRGB",
+   "label": "Mix (Legacy)",
+   "desc": "Mix two input colors",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeMixShader",
+   "label": "Mix Shader",
+   "desc": "Mix two shaders together. Typically used for material layering",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeNewGeometry",
+   "label": "Geometry",
+   "desc": "Retrieve geometric information about the current shading point",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeNormal",
+   "label": "Normal",
+   "desc": "Generate a normal vector and a dot product",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeNormalMap",
+   "label": "Normal Map",
+   "desc": "Generate a perturbed normal from an RGB normal map image. Typically used for faking highly detailed surfaces",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeObjectInfo",
+   "label": "Object Info",
+   "desc": "Retrieve information about the object instance",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeOutputAOV",
+   "label": "AOV Output",
+   "desc": "Arbitrary Output Variables.\nProvide custom render passes for arbitrary shader node outputs",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeOutputLight",
+   "label": "Light Output",
+   "desc": "Output light information to a light object",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeOutputLineStyle",
+   "label": "Line Style Output",
+   "desc": "",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeOutputMaterial",
+   "label": "Material Output",
+   "desc": "Output surface material information for use in rendering",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeOutputWorld",
+   "label": "World Output",
+   "desc": "Output light color information to the scene's World",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeParticleInfo",
+   "label": "Particle Info",
+   "desc": "Retrieve the data of the particle that spawned the object instance, for example to give variation to multiple instances of an object",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodePointInfo",
+   "label": "Point Info",
+   "desc": "Retrieve information about points in a point cloud",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeRGB",
+   "label": "RGB",
+   "desc": "A color picker",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeRGBCurve",
+   "label": "RGB Curves",
+   "desc": "Apply color corrections for each color channel",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeRGBToBW",
+   "label": "RGB to BW",
+   "desc": "Convert a color's luminance to a grayscale value",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeScript",
+   "label": "Script",
+   "desc": "Generate an OSL shader from a file or text data-block.\nNote: OSL shaders are not supported on all GPU backends",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSeparateColor",
+   "label": "Separate Color",
+   "desc": "Split a color into its individual components using multiple models",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSeparateHSV",
+   "label": "Separate HSV (Legacy)",
+   "desc": "Deprecated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSeparateRGB",
+   "label": "Separate RGB (Legacy)",
+   "desc": "Deprecated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSeparateXYZ",
+   "label": "Separate XYZ",
+   "desc": "Split a vector into its X, Y, and Z components",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeShaderToRGB",
+   "label": "Shader to RGB",
+   "desc": "Convert rendering effect (such as light and shadow) to color. Typically used for non-photorealistic rendering, to apply additional effects on the output of BSDFs.\nNote: only supported in EEVEE",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSqueeze",
+   "label": "Squeeze Value (Legacy)",
+   "desc": "Deprecated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeSubsurfaceScattering",
+   "label": "Subsurface Scattering",
+   "desc": "Subsurface multiple scattering shader to simulate light entering the surface and bouncing internally.\nTypically used for materials such as skin, wax, marble or milk",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTangent",
+   "label": "Tangent",
+   "desc": "Generate a tangent direction for the Anisotropic BSDF",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexBrick",
+   "label": "Brick Texture",
+   "desc": "Generate a procedural texture producing bricks",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexChecker",
+   "label": "Checker Texture",
+   "desc": "Generate a checkerboard texture",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexCoord",
+   "label": "Texture Coordinate",
+   "desc": "Retrieve multiple types of texture coordinates.\nTypically used as inputs for texture nodes",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexEnvironment",
+   "label": "Environment Texture",
+   "desc": "Sample an image file as an environment texture. Typically used to light the scene with the background node",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexGabor",
+   "label": "Gabor Texture",
+   "desc": "Generate Gabor noise",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexGradient",
+   "label": "Gradient Texture",
+   "desc": "Generate interpolated color and intensity values based on the input vector",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexIES",
+   "label": "IES Texture",
+   "desc": "Match real world lights with IES files, which store the directional intensity distribution of light sources",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexImage",
+   "label": "Image Texture",
+   "desc": "Sample an image file as a texture",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexMagic",
+   "label": "Magic Texture",
+   "desc": "Generate a psychedelic color texture",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexNoise",
+   "label": "Noise Texture",
+   "desc": "Generate fractal Perlin noise",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexPointDensity",
+   "label": "Point Density",
+   "desc": "Generate a volumetric point for each particle or vertex of another object",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexSky",
+   "label": "Sky Texture",
+   "desc": "Generate a procedural sky texture",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexVoronoi",
+   "label": "Voronoi Texture",
+   "desc": "Generate Worley noise based on the distance to random points. Typically used to generate textures such as stones, water, or biological cells",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexWave",
+   "label": "Wave Texture",
+   "desc": "Generate procedural bands or rings with noise",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeTexWhiteNoise",
+   "label": "White Noise Texture",
+   "desc": "Return a random value or color based on an input seed",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeUVAlongStroke",
+   "label": "UV Along Stroke",
+   "desc": "",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeUVMap",
+   "label": "UV Map",
+   "desc": "Retrieve a UV map from the geometry, or the default fallback if none is specified",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeValToRGB",
+   "label": "Color Ramp",
+   "desc": "Map values to colors with the use of a gradient",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeValue",
+   "label": "Value",
+   "desc": "Input numerical values to other nodes in the tree",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVectorCurve",
+   "label": "Vector Curves",
+   "desc": "Map input vector components with curves",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVectorDisplacement",
+   "label": "Vector Displacement",
+   "desc": "Displace the surface along an arbitrary direction",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVectorMath",
+   "label": "Vector Math",
+   "desc": "Perform vector math operation",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVectorRotate",
+   "label": "Vector Rotate",
+   "desc": "Rotate a vector around a pivot point (center)",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVectorTransform",
+   "label": "Vector Transform",
+   "desc": "Convert a vector, point, or normal between world, camera, and object coordinate space",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVertexColor",
+   "label": "Color Attribute",
+   "desc": "Retrieve a color attribute, or the default fallback if none is specified",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVolumeAbsorption",
+   "label": "Volume Absorption",
+   "desc": "Absorb light as it passes through the volume",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVolumeCoefficients",
+   "label": "Volume Coefficients",
+   "desc": "Model all three physical processes in a volume, represented by their coefficients",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVolumeInfo",
+   "label": "Volume Info",
+   "desc": "Read volume data attributes from volume grids",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVolumePrincipled",
+   "label": "Principled Volume",
+   "desc": "Combine all volume shading components into a single easy to use node",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeVolumeScatter",
+   "label": "Volume Scatter",
+   "desc": "Scatter light as it passes through the volume, often used to add fog to a scene",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeWavelength",
+   "label": "Wavelength",
+   "desc": "Convert a wavelength value to an RGB value",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "ShaderNodeWireframe",
+   "label": "Wireframe",
+   "desc": "Retrieve the edges of an object as it appears to Cycles.\nNote: as meshes are triangulated before being processed by Cycles, topology will always appear triangulated",
+   "tree": "ShaderNodeTree"
+  },
+  {
+   "id": "TextureNode",
+   "label": "Texture Node",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeAt",
+   "label": "At",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeBricks",
+   "label": "Bricks",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeChecker",
+   "label": "Checker",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeCombineColor",
+   "label": "Combine Color",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeCompose",
+   "label": "Combine RGBA (Legacy)",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeCoordinates",
+   "label": "Coordinates",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeCurveRGB",
+   "label": "RGB Curves",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeCurveTime",
+   "label": "Time",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeDecompose",
+   "label": "Separate RGBA",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeDistance",
+   "label": "Distance",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeGroup",
+   "label": "Group",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeHueSaturation",
+   "label": "Hue/Saturation/Value",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeImage",
+   "label": "Image",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeInvert",
+   "label": "Invert Color",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeMath",
+   "label": "Math",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeMixRGB",
+   "label": "Mix",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeOutput",
+   "label": "Output",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeRGBToBW",
+   "label": "RGB to BW",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeRotate",
+   "label": "Rotate",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeScale",
+   "label": "Scale",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeSeparateColor",
+   "label": "Separate Color",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexBlend",
+   "label": "Blend",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexClouds",
+   "label": "Clouds",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexDistNoise",
+   "label": "Distorted Noise",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexMagic",
+   "label": "Magic",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexMarble",
+   "label": "Marble",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexMusgrave",
+   "label": "Musgrave",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexNoise",
+   "label": "Noise",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexStucci",
+   "label": "Stucci",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexVoronoi",
+   "label": "Voronoi",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexWood",
+   "label": "Wood",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTexture",
+   "label": "Texture",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeTranslate",
+   "label": "Translate",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeValToNor",
+   "label": "Value to Normal",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeValToRGB",
+   "label": "Color Ramp",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  },
+  {
+   "id": "TextureNodeViewer",
+   "label": "Viewer",
+   "desc": "",
+   "tree": "TextureNodeTree"
+  }
+ ],
+ "brushes": [
+  {
+   "id": "DRAW",
+   "label": "Draw",
+   "desc": ""
+  },
+  {
+   "id": "DRAW_SHARP",
+   "label": "Draw Sharp",
+   "desc": ""
+  },
+  {
+   "id": "CLAY",
+   "label": "Clay",
+   "desc": ""
+  },
+  {
+   "id": "CLAY_STRIPS",
+   "label": "Clay Strips",
+   "desc": ""
+  },
+  {
+   "id": "CLAY_THUMB",
+   "label": "Clay Thumb",
+   "desc": ""
+  },
+  {
+   "id": "LAYER",
+   "label": "Layer",
+   "desc": ""
+  },
+  {
+   "id": "INFLATE",
+   "label": "Inflate",
+   "desc": ""
+  },
+  {
+   "id": "BLOB",
+   "label": "Blob",
+   "desc": ""
+  },
+  {
+   "id": "CREASE",
+   "label": "Crease",
+   "desc": ""
+  },
+  {
+   "id": "SMOOTH",
+   "label": "Smooth",
+   "desc": ""
+  },
+  {
+   "id": "PLANE",
+   "label": "Plane",
+   "desc": ""
+  },
+  {
+   "id": "MULTIPLANE_SCRAPE",
+   "label": "Multi-plane Scrape",
+   "desc": ""
+  },
+  {
+   "id": "PINCH",
+   "label": "Pinch",
+   "desc": ""
+  },
+  {
+   "id": "GRAB",
+   "label": "Grab",
+   "desc": ""
+  },
+  {
+   "id": "ELASTIC_DEFORM",
+   "label": "Elastic Deform",
+   "desc": ""
+  },
+  {
+   "id": "SNAKE_HOOK",
+   "label": "Snake Hook",
+   "desc": ""
+  },
+  {
+   "id": "THUMB",
+   "label": "Thumb",
+   "desc": ""
+  },
+  {
+   "id": "POSE",
+   "label": "Pose",
+   "desc": ""
+  },
+  {
+   "id": "NUDGE",
+   "label": "Nudge",
+   "desc": ""
+  },
+  {
+   "id": "ROTATE",
+   "label": "Rotate",
+   "desc": ""
+  },
+  {
+   "id": "TOPOLOGY",
+   "label": "Slide Relax",
+   "desc": ""
+  },
+  {
+   "id": "BOUNDARY",
+   "label": "Boundary",
+   "desc": ""
+  },
+  {
+   "id": "CLOTH",
+   "label": "Cloth",
+   "desc": ""
+  },
+  {
+   "id": "SIMPLIFY",
+   "label": "Simplify",
+   "desc": ""
+  },
+  {
+   "id": "MASK",
+   "label": "Mask",
+   "desc": ""
+  },
+  {
+   "id": "DRAW_FACE_SETS",
+   "label": "Draw Face Sets",
+   "desc": ""
+  },
+  {
+   "id": "DISPLACEMENT_ERASER",
+   "label": "Multires Displacement Eraser",
+   "desc": ""
+  },
+  {
+   "id": "DISPLACEMENT_SMEAR",
+   "label": "Multires Displacement Smear",
+   "desc": ""
+  },
+  {
+   "id": "PAINT",
+   "label": "Paint",
+   "desc": ""
+  },
+  {
+   "id": "SMEAR",
+   "label": "Smear",
+   "desc": ""
+  }
+ ]
+}
