@@ -1,11 +1,11 @@
-# Blender Copilot — Roadmap
+# Blender Copilot - Roadmap
 
-Goal: give an AI agent real, real-time, collaborative control of Blender — not a
+Goal: give an AI agent real, real-time, collaborative control of Blender - not a
 toy "make me a cube" bridge.
 
 ## Target version: 4.5 LTS (locked)
 
-Blender dropped Intel-macOS builds after 4.5 LTS — 5.0/5.1/5.2 ship `arm64`
+Blender dropped Intel-macOS builds after 4.5 LTS - 5.0/5.1/5.2 ship `arm64`
 only. On an i9-9880H, **4.5 LTS is the terminal version** (supported to mid-2027).
 Latest release overall is 5.2.0; there is no 6.0.
 
@@ -32,7 +32,7 @@ Full machine-readable inventory: `research/operators.json`.
 ~50-100 tools, and the context cost of the schemas alone would be enormous.
 
 Every existing Blender MCP hits this wall and responds by hand-picking a small
-subset — e.g. one popular server exposes 22 tools, another 69. That is why they
+subset - e.g. one popular server exposes 22 tools, another 69. That is why they
 all feel like toys: they expose ~1-3% of Blender and the agent can't reach the
 rest.
 
@@ -44,12 +44,12 @@ Nothing is loaded up front. The agent sees only a lean *index* of what exists.
 It reasons about intent ("the user is making a movie"), queries the index, and
 only the matching handful of tool schemas are injected into context.
 
-This is a real, shipping pattern, not speculation — MCP supports it natively via
+This is a real, shipping pattern, not speculation - MCP supports it natively via
 `notifications/tools/list_changed`, and Claude Code itself implements it
 (`ToolSearch` + deferred tools). We have a working reference to copy.
 
 **Critical constraint:** context is append-only. *Unloading* a tool does not
-reclaim its tokens — once a schema is in the conversation it stays. All savings
+reclaim its tokens - once a schema is in the conversation it stays. All savings
 come from **never loading** the 2,380 tools that were never needed. The
 load/unload lifecycle is therefore not where the engineering effort goes.
 
@@ -66,7 +66,7 @@ rather than tool schemas (bounded).
 
 ### The skill is the index
 
-These fuse: the skill is not merely documentation. It is the retrieval layer —
+These fuse: the skill is not merely documentation. It is the retrieval layer -
 the thing that turns intent into the right slice of the operator graph, and
 teaches the agent to write correct `bpy` for everything else. It is the
 centerpiece of the project, not a preparatory step.
@@ -80,7 +80,7 @@ centerpiece of the project, not a preparatory step.
    a real UI context (no active area/region/object). Requires a context-override
    resolver that synthesizes a valid context per operator.
 3. **Prefer the data API.** Where possible, bypass `bpy.ops` entirely for
-   `bpy.data` / `bmesh` / direct RNA writes — faster, deterministic, no context
+   `bpy.data` / `bmesh` / direct RNA writes - faster, deterministic, no context
    problem, no undo-stack pollution.
 4. **Feedback loop.** An agent that cannot see the result is guessing. Needs
    viewport render-back, structured scene graph introspection, and error capture.
@@ -89,14 +89,14 @@ centerpiece of the project, not a preparatory step.
 
 ## Phases
 
-- **Phase 1 — Research.** Deep feature survey of Blender: every major subsystem,
+- **Phase 1 - Research.** Deep feature survey of Blender: every major subsystem,
   how professionals actually use it, and the API path to each. Output: the
   research doc (~5k words) + operator/RNA inventory. *In progress.*
-- **Phase 2 — The Skill.** Convert research into a progressively-disclosed skill
+- **Phase 2 - The Skill.** Convert research into a progressively-disclosed skill
   for Claude/Codex: core `bpy` idioms + per-domain reference files.
-- **Phase 3 — The Bridge.** Blender addon (main-thread executor, context
+- **Phase 3 - The Bridge.** Blender addon (main-thread executor, context
   resolver, introspection, render-back) + MCP server.
-- **Phase 4 — Collaboration.** Real-time bidirectional sync, undo integration,
+- **Phase 4 - Collaboration.** Real-time bidirectional sync, undo integration,
   agent-visible viewport state.
 
 ## Layout
@@ -104,8 +104,8 @@ centerpiece of the project, not a preparatory step.
 ```
 blender-copilot/
   source/      Blender 4.5 LTS source (shallow clone, reference only)
-  research/    Phase 1 outputs — inventory JSON + the feature doc
-  skill/       Phase 2 — the Claude/Codex skill
-  addon/       Phase 3 — Blender-side addon
-  server/      Phase 3 — MCP server
+  research/    Phase 1 outputs - inventory JSON + the feature doc
+  skill/       Phase 2 - the Claude/Codex skill
+  addon/       Phase 3 - Blender-side addon
+  server/      Phase 3 - MCP server
 ```

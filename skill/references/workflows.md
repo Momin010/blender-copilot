@@ -10,7 +10,7 @@ commitment as long as possible: modifiers instead of edits, node trees instead
 of baked geometry, constraints instead of keyframes, collections instead of
 duplicated objects.
 
-The reason is not purity — it is that **every project changes direction**. Work
+The reason is not purity - it is that **every project changes direction**. Work
 that can absorb a change costs hours; work that cannot costs days.
 
 Apply a modifier only when you need the result as real geometry: export,
@@ -21,7 +21,7 @@ collection.
 
 1. **Blockout** with primitives. Get proportion and silhouette right before any
    detail. Most bad models are bad at this stage and no amount of detail rescues them.
-2. **Refine** the base mesh. Keep it quad-dominant and light — a few thousand
+2. **Refine** the base mesh. Keep it quad-dominant and light - a few thousand
    polygons. Subdivision adds density later.
 3. **Modifiers** for repetition and smoothing: Mirror for symmetry, Array for
    repeats, Subdivision Surface for smooth forms, Bevel for edge highlights.
@@ -32,7 +32,7 @@ collection.
 Modifier order is not cosmetic: Mirror before Subdivision welds the seam;
 Subdivision before Mirror produces a visible crease down the middle.
 
-Edge flow should follow the form's structure — loops around eyes and mouths on a
+Edge flow should follow the form's structure - loops around eyes and mouths on a
 face, along panel lines on hard surfaces. Triangles and n-gons are fine on
 static props and a real problem on anything that deforms.
 
@@ -40,7 +40,7 @@ static props and a real problem on anything that deforms.
 
 **Hard surface** (machines, architecture, props): booleans plus Bevel and
 Weighted Normals. Sharp, controlled edges. Bevel needs a small width and 2–3
-segments to catch light — an unbevelled edge is perfectly sharp and therefore
+segments to catch light - an unbevelled edge is perfectly sharp and therefore
 invisible, which is why untextured hard-surface renders look flat.
 
 **Organic** (creatures, characters): sculpt from a base mesh with dynamic
@@ -49,7 +49,7 @@ topology or multiresolution, then retopologize to clean quads for animation.
 ## Texturing
 
 1. Unwrap first. Texturing before UVs wastes the work.
-2. Block in base materials with Principled BSDF — get value and roughness
+2. Block in base materials with Principled BSDF - get value and roughness
    relationships right before detail.
 3. Add variation: nothing in reality is uniform. Noise into roughness is the
    cheapest realism upgrade available.
@@ -65,17 +65,17 @@ roughness looks like plastic.
 Light before texturing if the mood is defined; texture first if the object is.
 
 Start with an HDRI for ambient, then add a key. Judge in the final view
-transform (AgX) — lighting judged in Standard will be wrong.
+transform (AgX) - lighting judged in Standard will be wrong.
 
 Contrast is what makes an image read. Evenly lit scenes are the most common
 failure, and they look like renders rather than photographs.
 
 ## Animation
 
-1. **Blocking** — key the extreme poses only, on constant interpolation. Judge
+1. **Blocking** - key the extreme poses only, on constant interpolation. Judge
    timing before touching anything else.
-2. **Spline** — switch to Bezier and let motion flow between the keys.
-3. **Polish** — overlapping action, follow-through, breakdowns.
+2. **Spline** - switch to Bezier and let motion flow between the keys.
+3. **Polish** - overlapping action, follow-through, breakdowns.
 
 Timing and spacing carry almost all of the quality. Smooth interpolation on
 badly timed keys is still bad animation.
@@ -85,7 +85,7 @@ Animate on 2s (a key every 2 frames) for stylized work; 1s for realism.
 ## Simulation
 
 Simulations are slow and iterative. Work at low resolution until behaviour is
-right, then raise it once. Always bake before rendering — an unbaked sim can
+right, then raise it once. Always bake before rendering - an unbaked sim can
 evaluate differently and pop.
 
 Order matters: cloth on an animated character needs the animation finished
@@ -105,7 +105,7 @@ Grading in the compositor is far cheaper than re-rendering. Standard chain:
 Render Layers → Denoise → Glare → Color Balance → Composite.
 
 Subtle glare on highlights and a slight vignette do more for perceived quality
-than most 3D-side work. But compositing cannot fix bad lighting — it amplifies
+than most 3D-side work. But compositing cannot fix bad lighting - it amplifies
 what is there.
 
 ## Video editing (VSE)
@@ -119,7 +119,7 @@ strip = se.sequences.new_movie("shot01", "/renders/shot01.mp4", channel=1, frame
 ```
 
 Also accepts image sequences (`new_image`), and `new_scene` to reference a
-Blender scene directly — that is how you cut between shots without exporting.
+Blender scene directly - that is how you cut between shots without exporting.
 
 ## Common failure modes
 
@@ -138,6 +138,6 @@ Blender scene directly — that is how you cut between shots without exporting.
 ## Judgement
 
 When asked for something visual, look at the render before reporting success.
-The pipeline can execute perfectly and still produce a bad image — geometry in
+The pipeline can execute perfectly and still produce a bad image - geometry in
 the right place, lighting flat, materials grey. Executing the operators is the
 easy half.

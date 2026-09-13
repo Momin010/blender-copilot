@@ -5,8 +5,8 @@
 Blender's object model is two layers, and conflating them causes most confusing
 bugs:
 
-- **Object** — a transform in a scene. Location, rotation, modifiers, constraints.
-- **Object data** (`ob.data`) — the mesh/curve/camera/light itself. Shared.
+- **Object** - a transform in a scene. Location, rotation, modifiers, constraints.
+- **Object data** (`ob.data`) - the mesh/curve/camera/light itself. Shared.
 
 Ten objects can share one mesh. Editing that mesh changes all ten; editing
 `ob.location` changes one. `bpy.data.objects` vs `bpy.data.meshes` are separate
@@ -27,7 +27,7 @@ nothing" bug.
 
 ## Collections
 
-Collections are the organizing unit — and the unit of linking, instancing and
+Collections are the organizing unit - and the unit of linking, instancing and
 render visibility.
 
 ```python
@@ -63,8 +63,8 @@ bpy.ops.outliner.orphans_purge(do_recursive=True)
 
 ## Linking and appending
 
-**Link** references another file — the asset stays in one place and updates
-propagate. **Append** copies it in — self-contained but frozen. Production uses
+**Link** references another file - the asset stays in one place and updates
+propagate. **Append** copies it in - self-contained but frozen. Production uses
 link for shared assets and append for one-offs.
 
 ```python
@@ -79,7 +79,7 @@ for col in dst.collections:
 ```
 
 Linked data is read-only. To pose or modify it, make a **library override**
-(`bpy.ops.object.make_override_library()`) — the modern replacement for proxies.
+(`bpy.ops.object.make_override_library()`) - the modern replacement for proxies.
 
 ## Interchange formats
 
@@ -98,7 +98,7 @@ bpy.ops.wm.usd_export(filepath="/out/scene.usdc",
                       selected_objects_only=False)
 ```
 
-USD is where professional pipelines have converged — it carries hierarchy,
+USD is where professional pipelines have converged - it carries hierarchy,
 materials, variants and layering, and every major DCC reads it. Prefer it unless
 a target engine demands otherwise. glTF for the web, FBX only when something
 downstream requires it.
@@ -112,7 +112,7 @@ rest. Before export:
 - Apply or bake modifiers that must persist as geometry
 - Bake procedural materials to image textures
 - Bake constraint-driven animation to keyframes (`nla.bake`, `visual_keying=True`)
-- Apply transforms (`object.transform_apply`) — non-uniform scale breaks in many engines
+- Apply transforms (`object.transform_apply`) - non-uniform scale breaks in many engines
 
 Telling someone a rig "exported fine" without checking these is how pipelines
 break downstream.
@@ -138,7 +138,7 @@ ob.asset_data.tags.new("rock")
 ob.asset_generate_preview()
 ```
 
-This is how a studio builds a reusable library — worth doing for anything
+This is how a studio builds a reusable library - worth doing for anything
 produced more than once.
 
 ## File paths

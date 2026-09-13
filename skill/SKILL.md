@@ -11,11 +11,11 @@ what you need instead of guessing.
 
 ## The loop
 
-1. **`blender_scene`** — see what you are working with. Always, before acting.
-2. **`blender_search`** — describe the goal in plain language, get capabilities.
-3. **`blender_describe`** — pull the exact parameters for what you picked.
-4. **`blender_call`** or **`blender_python`** — do it.
-5. **`blender_render`** — look at the result. Do not assume it worked.
+1. **`blender_scene`** - see what you are working with. Always, before acting.
+2. **`blender_search`** - describe the goal in plain language, get capabilities.
+3. **`blender_describe`** - pull the exact parameters for what you picked.
+4. **`blender_call`** or **`blender_python`** - do it.
+5. **`blender_render`** - look at the result. Do not assume it worked.
 
 Skip step 5 only when the change is non-visual.
 
@@ -58,7 +58,7 @@ you a debugging cycle each.
 
 **`bpy.context.active_object` can be missing.** Right after
 `wm.read_homefile()` the context has no 3D-view screen and the attribute does
-not exist. `bpy.context.view_layer.objects.active` always resolves — prefer it.
+not exist. `bpy.context.view_layer.objects.active` always resolves - prefer it.
 
 **`to_mesh()` does not include instances.** A geometry-nodes scatter producing
 600 rocks still reports 4 vertices. Count through the depsgraph instead:
@@ -95,15 +95,15 @@ the instanced geometry, or use a Set Material node inside the tree.
 ## Version
 
 Blender **4.5 LTS**. Blender 5.0+ changed parts of the Geometry Nodes API
-(bundles, closures) — that syntax will not work here. Target 4.5.
+(bundles, closures) - that syntax will not work here. Target 4.5.
 
 ## Deeper references
 
 Load only what the task needs:
 
-- `references/geometry-nodes.md` — procedural modelling, scattering, instancing
-- `references/shading.md` — materials, the node graph, PBR
-- `references/animation.md` — keyframes, drivers, rigging, constraints
-- `references/rendering.md` — EEVEE/Cycles, lighting, cameras, output
-- `references/pipeline.md` — USD/glTF/FBX, collections, linking, scene structure
-- `references/workflows.md` — how professionals actually sequence this work
+- `references/geometry-nodes.md` - procedural modelling, scattering, instancing
+- `references/shading.md` - materials, the node graph, PBR
+- `references/animation.md` - keyframes, drivers, rigging, constraints
+- `references/rendering.md` - EEVEE/Cycles, lighting, cameras, output
+- `references/pipeline.md` - USD/glTF/FBX, collections, linking, scene structure
+- `references/workflows.md` - how professionals actually sequence this work

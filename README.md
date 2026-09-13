@@ -1,6 +1,6 @@
 # Blender Copilot
 
-An MCP bridge giving any AI copilot professional-grade control of Blender —
+An MCP bridge giving any AI copilot professional-grade control of Blender -
 all **3,064 capabilities**, not a hand-picked subset.
 
 Status: **working end to end.** 45/45 tests passing against live Blender 4.5.12 LTS.
@@ -21,7 +21,7 @@ Two mechanisms make that possible:
 **Progressive disclosure.** Nothing is preloaded. The agent reads a lean domain
 map, searches by intent, and pulls schemas only for what it is about to use.
 (Context is append-only, so the saving comes from *never loading* the ~3,050
-irrelevant capabilities — not from unloading afterwards.)
+irrelevant capabilities - not from unloading afterwards.)
 
 **Code as the interface.** For the long tail, `blender_python` runs arbitrary
 `bpy` inside Blender. Capability lives in generated code, which is unbounded,
@@ -47,7 +47,7 @@ operator-only index is blind to every one of them.
 
 | Tool | Purpose |
 |---|---|
-| `blender_domains` | Lean map of what exists — counts only, near-zero context cost |
+| `blender_domains` | Lean map of what exists - counts only, near-zero context cost |
 | `blender_search` | Plain-language intent → matching capabilities |
 | `blender_describe` | Full parameter schemas, on demand |
 | `blender_call` | Run an operator with a synthesized UI context |
@@ -69,7 +69,7 @@ Two cases needed specific handling:
 
 - *Node editors* have `edit_tree == None` until a tree is pinned, because
   `edit_tree` is normally derived during draw and the bridge never draws.
-- *UV editing* needs `area.ui_type = 'UV'`, not just `area.type = 'IMAGE_EDITOR'` —
+- *UV editing* needs `area.ui_type = 'UV'`, not just `area.type = 'IMAGE_EDITOR'` -
   setting only the area type gives you the image viewer, where every `uv.*`
   operator fails.
 
@@ -144,4 +144,4 @@ keep things simple.
 Blender **4.5 LTS**, locked. Blender dropped Intel-macOS builds after 4.5, so
 5.0/5.1/5.2 are Apple-Silicon only and cannot run on this hardware. 4.5 LTS is
 supported to mid-2027. Blender 5.0 changed parts of the Geometry Nodes API
-(bundles, closures) — that syntax does not apply here.
+(bundles, closures) - that syntax does not apply here.

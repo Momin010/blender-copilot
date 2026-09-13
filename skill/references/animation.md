@@ -31,7 +31,7 @@ for fc in ob.animation_data.action.fcurves:
         kp.easing = 'AUTO'
 ```
 
-`animation_data` is `None` until the first keyframe exists — always guard:
+`animation_data` is `None` until the first keyframe exists - always guard:
 
 ```python
 if ob.animation_data and ob.animation_data.action:
@@ -57,7 +57,7 @@ get a stale value, this is why.
 
 ## Drivers
 
-Drivers link one property to another by expression — the backbone of rigging.
+Drivers link one property to another by expression - the backbone of rigging.
 
 ```python
 fcurve = ob.driver_add("location", 2)     # z
@@ -74,7 +74,7 @@ drv.expression = "ctrl * 0.5"
 
 Remove with `ob.driver_remove("location", 2)`.
 
-## Constraints — 28 types
+## Constraints - 28 types
 
 Constraints are not operators; they are added by type. Non-destructive and
 evaluated in order.
@@ -94,7 +94,7 @@ The ones that carry most real work:
 |---|---|
 | `COPY_LOCATION` / `COPY_ROTATION` / `COPY_SCALE` | Direct linkage, often with an influence below 1 |
 | `COPY_TRANSFORMS` | All three at once |
-| `TRACK_TO` / `DAMPED_TRACK` | Aim at a target — cameras, eyes, turrets |
+| `TRACK_TO` / `DAMPED_TRACK` | Aim at a target - cameras, eyes, turrets |
 | `FOLLOW_PATH` | Motion along a curve |
 | `CHILD_OF` | Parenting that can be animated on and off |
 | `LIMIT_LOCATION` / `LIMIT_ROTATION` | Keep a control inside a valid range |
@@ -109,9 +109,9 @@ last. A Limit after a Copy behaves very differently from before it.
 Bones live in three different collections depending on mode, and confusing them
 is the most common rigging error:
 
-- `armature.data.edit_bones` — **Edit mode only**. Where you set head/tail.
-- `armature.data.bones` — the rest/definition data. Read-only structure.
-- `armature.pose.bones` — **Pose mode**. Where you animate and add constraints.
+- `armature.data.edit_bones` - **Edit mode only**. Where you set head/tail.
+- `armature.data.bones` - the rest/definition data. Read-only structure.
+- `armature.pose.bones` - **Pose mode**. Where you animate and add constraints.
 
 ```python
 bpy.ops.object.armature_add()
@@ -158,7 +158,7 @@ key.data[0].co.z += 0.1
 key.value = 0.5
 ```
 
-The first key must be `Basis` — it is the neutral state everything else is a
+The first key must be `Basis` - it is the neutral state everything else is a
 delta from.
 
 ## Baking to keyframes
@@ -170,5 +170,5 @@ bpy.ops.nla.bake(frame_start=1, frame_end=250, only_selected=True,
                  visual_keying=True, clear_constraints=False, bake_types={'POSE'})
 ```
 
-`visual_keying=True` captures the *evaluated* result — without it you bake the
+`visual_keying=True` captures the *evaluated* result - without it you bake the
 raw values and lose everything the constraints were doing.

@@ -9,7 +9,7 @@ scene.render.engine = 'CYCLES'              # or 'BLENDER_EEVEE_NEXT', 'BLENDER_
 
 **Gotcha:** `CYCLES` does not appear in
 `scene.render.bl_rna.properties['engine'].enum_items` even when the Cycles addon
-is enabled — dynamically registered engines are not in the static RNA enum.
+is enabled - dynamically registered engines are not in the static RNA enum.
 Assignment still works. Do not conclude Cycles is unavailable because it is
 missing from that list.
 
@@ -38,7 +38,7 @@ cy.max_bounces = 12
 With denoising on, 64–128 samples is usually enough. Pushing samples to 1000
 without denoising is a common way to waste hours for no visible gain.
 
-On this machine `cycles.device` reports `CPU` — an Intel Mac with no CUDA/OptiX
+On this machine `cycles.device` reports `CPU` - an Intel Mac with no CUDA/OptiX
 path. Expect Cycles to be slow here and prefer EEVEE for iteration.
 
 ## Resolution and output
@@ -71,7 +71,7 @@ scene.view_settings.exposure = 0.0
 ```
 
 AgX handles bright highlights gracefully instead of clipping them to white.
-Setting `view_transform = 'Standard'` gives you raw sRGB — correct only when
+Setting `view_transform = 'Standard'` gives you raw sRGB - correct only when
 rendering UI elements or texture bakes, never for photographic work.
 
 ## Lighting
@@ -90,7 +90,7 @@ sun.rotation_euler = (math.radians(50), 0, math.radians(40))
 | `AREA` | watts | Most controllable; `size` drives softness |
 | `SPOT` | watts | `spot_size`, `spot_blend` |
 
-Sun energy and point energy are in different units — a sun at 1000 is not
+Sun energy and point energy are in different units - a sun at 1000 is not
 "bright", it is broken.
 
 **Three-point lighting** is the reliable default: a bright key at ~45° off
@@ -119,7 +119,7 @@ Focal length choices carry meaning: 24–35mm exaggerates depth (environments,
 drama), 50mm is neutral, 85–135mm compresses (portraits, product). Defaulting
 everything to 50mm is safe but flat.
 
-Aiming a camera by hand is error-prone — use a constraint:
+Aiming a camera by hand is error-prone - use a constraint:
 
 ```python
 c = cam.constraints.new(type='TRACK_TO')
@@ -128,7 +128,7 @@ c.target = bpy.data.objects['Subject']
 
 ## Viewport preview vs final
 
-`blender_render(mode="viewport")` is an OpenGL snapshot — near-instant, ignores
+`blender_render(mode="viewport")` is an OpenGL snapshot - near-instant, ignores
 the render engine. Use it for iteration and layout checks.
 
 `mode="final"` runs the actual engine. Use sparingly, and reduce
@@ -144,6 +144,6 @@ vl.use_pass_normal = True
 vl.use_pass_cryptomatte_object = True
 ```
 
-Cryptomatte gives per-object masks for compositing without re-rendering — enable
+Cryptomatte gives per-object masks for compositing without re-rendering - enable
 it on anything destined for post. Save as **OpenEXR multilayer** to keep passes
 in one file.

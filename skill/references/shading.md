@@ -18,7 +18,7 @@ bsdf = nt.nodes["Principled BSDF"]   # present by default
 
 Assigning to `ob.data.materials` puts the material on the *mesh* (shared by all
 users of that mesh). `ob.material_slots[0].link = 'OBJECT'` makes it per-object
-instead — needed when two objects share a mesh but differ in look.
+instead - needed when two objects share a mesh but differ in look.
 
 ## Principled BSDF
 
@@ -30,7 +30,7 @@ One node covers almost all physically-based surfaces. Verified 4.5 input names:
 `Emission Strength`, `Coat Weight`, `Transmission Weight`, `Sheen Weight`.
 
 **These names changed in 4.x.** Older tutorials say `Subsurface`,
-`Specular`, `Emission`, `Transmission` — those keys raise `KeyError` here. If a
+`Specular`, `Emission`, `Transmission` - those keys raise `KeyError` here. If a
 name fails, list them rather than guessing:
 
 ```python
@@ -40,7 +40,7 @@ name fails, list them rather than guessing:
 ### Physical defaults that read as "professional"
 
 - Metal: `Metallic = 1.0`, `Base Color` is the metal's tint, `Roughness` 0.1–0.4.
-  Metals have no diffuse — a grey metal with `Metallic = 0.5` is not a real material.
+  Metals have no diffuse - a grey metal with `Metallic = 0.5` is not a real material.
 - Dielectric (plastic, wood, stone): `Metallic = 0.0`, vary `Roughness`.
 - Nothing in the real world is `Roughness = 0.0`. Use 0.05 as the floor.
 - `Base Color` values above ~0.8 are brighter than any real diffuse surface.
@@ -59,7 +59,7 @@ nt.links.new(noise.outputs['Fac'], ramp.inputs['Fac'])
 nt.links.new(ramp.outputs['Color'], bsdf.inputs['Base Color'])
 ```
 
-Colors are always RGBA — a 3-tuple raises. Color ramps start with exactly two
+Colors are always RGBA - a 3-tuple raises. Color ramps start with exactly two
 elements; add more with `ramp.color_ramp.elements.new(position)`.
 
 ### Adding stops to a ramp
@@ -85,7 +85,7 @@ rough_tex.image.colorspace_settings.name = 'Non-Color'
 ```
 
 Getting this wrong is the single most common cause of "my PBR material looks
-wrong" — the values are silently gamma-shifted.
+wrong" - the values are silently gamma-shifted.
 
 Normal maps need a Normal Map node between texture and shader:
 
@@ -106,7 +106,7 @@ nt.links.new(uvmap.outputs['UV'], tex.inputs['Vector'])
 ```
 
 For procedural textures on objects that move, use **Object** coordinates from a
-Texture Coordinate node — Generated coordinates stretch with the bounding box.
+Texture Coordinate node - Generated coordinates stretch with the bounding box.
 
 ## World / environment lighting
 
@@ -120,7 +120,7 @@ bg.inputs['Strength'].default_value = 1.0
 ```
 
 For an HDRI, feed an `ShaderNodeTexEnvironment` into the Background color. An
-HDRI does more for realism than any amount of material tweaking — reach for it
+HDRI does more for realism than any amount of material tweaking - reach for it
 before adding lights.
 
 ## Node groups

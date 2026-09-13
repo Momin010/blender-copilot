@@ -1,12 +1,12 @@
 # Geometry Nodes
 
-270 nodes. Blender's procedural modelling engine — the part that competes with
+270 nodes. Blender's procedural modelling engine - the part that competes with
 Houdini, and the part most professional environment work now runs through.
 
 ## Mental model
 
 A geometry node tree is a function: geometry in, geometry out. It is attached as
-a **modifier**, so it never destroys the base mesh — you can change one value and
+a **modifier**, so it never destroys the base mesh - you can change one value and
 the whole result rebuilds. That non-destructiveness is the entire point; if you
 find yourself applying modifiers to "bake in" a step, ask whether the step
 belongs in the tree instead.
@@ -36,7 +36,7 @@ gin  = n.new('NodeGroupInput');  gin.location  = (-600, 0)
 gout = n.new('NodeGroupOutput'); gout.location = ( 600, 0)
 ```
 
-`location` is cosmetic but set it anyway — a human will open this tree, and an
+`location` is cosmetic but set it anyway - a human will open this tree, and an
 unreadable graph is a real cost.
 
 ## Scatter: the canonical pattern
@@ -71,13 +71,13 @@ L(gin.outputs[0],            join.inputs[0])     # keep the original surface
 L(join.outputs[0],           gout.inputs[0])
 ```
 
-Note `join.inputs[0]` is linked twice — Join Geometry takes multiple links into
+Note `join.inputs[0]` is linked twice - Join Geometry takes multiple links into
 one socket. That is normal and correct.
 
 ### Socket naming, not indexing
 
 `inst.inputs['Scale']` survives version changes; `inst.inputs[3]` does not.
-The exception is nodes with unnamed or duplicate sockets — `FunctionNodeRandomValue`
+The exception is nodes with unnamed or duplicate sockets - `FunctionNodeRandomValue`
 uses `inputs[0]`/`inputs[1]` for min/max because the names repeat across data
 types. When unsure:
 
@@ -94,7 +94,7 @@ write to sockets that are about to be replaced.
 ## Counting the result
 
 Instances are not real geometry until realized, so `to_mesh()` under-reports
-badly — a 600-rock scatter reports 4 vertices. Count through the depsgraph:
+badly - a 600-rock scatter reports 4 vertices. Count through the depsgraph:
 
 ```python
 deps = bpy.context.evaluated_depsgraph_get()
@@ -102,7 +102,7 @@ n_instances = sum(1 for i in deps.object_instances if i.is_instance)
 ```
 
 Use **Realize Instances** only when you must (export, boolean, per-element
-editing). Instances are dramatically cheaper — realizing a large scatter is a
+editing). Instances are dramatically cheaper - realizing a large scatter is a
 common accidental way to make a scene unopenable.
 
 ## Materials on instances
@@ -118,7 +118,7 @@ setmat.inputs['Material'].default_value = bpy.data.materials['Rock']
 
 ## Exposing parameters to the modifier
 
-Inputs you add to the tree interface appear as modifier settings — this is how
+Inputs you add to the tree interface appear as modifier settings - this is how
 you hand a human a tunable asset rather than a black box.
 
 ```python
@@ -148,7 +148,7 @@ it off `s.identifier` rather than guessing.
 | Curve to mesh | `GeometryNodeCurveToMesh` |
 | Subdivide | `GeometryNodeSubdivisionSurface` |
 
-Search for anything else rather than guessing — `blender_search` covers all 270.
+Search for anything else rather than guessing - `blender_search` covers all 270.
 
 ## Version note
 
