@@ -22,7 +22,7 @@ if [ -d "$HOME/.claude/skills" ]; then
   echo "skill  -> $HOME/.claude/skills/blender"
 fi
 
-python3 -m venv "$REPO/server/.venv"
+python3 -m venv --clear "$REPO/server/.venv"
 "$REPO/server/.venv/bin/pip" install -q -r "$REPO/server/requirements.txt"
 echo "venv   -> $REPO/server/.venv"
 
