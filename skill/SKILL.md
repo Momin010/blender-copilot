@@ -107,3 +107,4 @@ Load only what the task needs:
 - `references/rendering.md` - EEVEE/Cycles, lighting, cameras, output
 - `references/pipeline.md` - USD/glTF/FBX, collections, linking, scene structure
 - `references/workflows.md` - how professionals actually sequence this work
+- `references/craft.md` - rules that separate human-quality models from AI slabs (read before modeling or texturing)
